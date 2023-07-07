@@ -6,7 +6,7 @@
   "scripts": {
     "start-dev": "NODE_ENV=development node app.js",
     "start-prod": "NODE_ENV=production node app.js",
-    "start-test": "jest"
+    "start-test": "NODE_ENV=test jest"
   },
   "keywords": [],
   "author": "Sarah Landis and Connie Jacques",
