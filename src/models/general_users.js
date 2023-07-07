@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-const { Schema } = mongoose;
 
-const GeneralUsersSchema = new Schema({
+
+const GeneralUsersSchema = new mongoose.Schema({
   fullName: {
     type: String,
     required: true
