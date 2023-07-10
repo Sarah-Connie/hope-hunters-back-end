@@ -4,8 +4,8 @@
   "description": "Hope Hunters Website Back End",
   "main": "index.js",
   "scripts": {
-    "start-dev": "NODE_ENV=development node app.js",
-    "start-prod": "NODE_ENV=production node app.js",
+    "start-dev": "NODE_ENV=development node index.js",
+    "start-prod": "NODE_ENV=production node index.js",
     "start-test": "NODE_ENV=test jest"
   },
   "keywords": [],
