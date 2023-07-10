@@ -44,13 +44,22 @@ switch(process.env.NODE_ENV.toLowerCase()){
 		console.error("Unable to connect to database");
 }
 
-const {databaseConnector} = require("./database")
-databaseConnector(databaseURL).then(() =>{
+const { databaseConnector, seedDatabase } = require("./database")
+
+databaseConnector(databaseURL).then(() => {
 	console.log("Database connection established.")
 }).catch(error => {
 	console.log("Unable to establish database connection.")
 	console.log(error)
 })
+
+seedDatabase().then(() => {
+    console.log('Database seeded.')
+}).catch(error => {
+    console.log('Unable to seed data.')
+    console.log(error)
+})
+
 
 app.get("/databaseHealth", (request, response) => {
     let databaseState = mongoose.connection.readyState;
