@@ -81,7 +81,7 @@ const MissingPersonsSchema = new mongoose.Schema({
         [{type: mongoose.Types.ObjectId, ref: 'GeneralUser'}, {type: mongoose.Types.ObjectId, ref: 'PoliceUser'}],
     dateAdded: {
         type: Date,
-        default: date.Now()
+        default: Date.now()
     }
 });
 
