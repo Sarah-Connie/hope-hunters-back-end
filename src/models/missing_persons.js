@@ -37,6 +37,9 @@ const MissingPersonsSchema = new mongoose.Schema({
         address: {
             type: String
         },
+        city: {
+            type: String
+        },
         state: ['NSW', 'QLD', 'VIC', 'TAS', 'WA', 'SA', 'WA', 'NT', 'ACT'],
         postcode: {
             type: String,
