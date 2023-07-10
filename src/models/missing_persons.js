@@ -74,7 +74,8 @@ const MissingPersonsSchema = new mongoose.Schema({
         type: String
     },
     amberAlert: {
-        type: Boolean
+        type: Boolean,
+        default: false
     },
     addedBy:
         [{type: mongoose.Types.ObjectId, ref: 'GeneralUser'}, {type: mongoose.Types.ObjectId, ref: 'PoliceUser'}],
