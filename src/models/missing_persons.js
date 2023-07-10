@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 
 const MissingPersonsSchema = new mongoose.Schema({
@@ -85,6 +85,6 @@ const MissingPersonsSchema = new mongoose.Schema({
     }
 });
 
-const MissingPerson = mongoose.model('MissingPerson', MissingPersonsSchema);
+const MissingPerson = mongoose.model('MissingPerson', MissingPersonsSchema, 'missingpersons');
 
 module.exports = MissingPerson
