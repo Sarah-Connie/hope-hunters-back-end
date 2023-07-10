@@ -1,11 +1,15 @@
-const mongoose = require('mongoose')
+const GeneralUser = require('./src/models/general_users');
+const PoliceUser = require('./src/models/police_users');
+const MissingPerson = require('./src/models/missing_persons');
+
+const mongoose = require('mongoose');
 
 
 async function databaseConnector(databaseURL) {
     try {
         await mongoose.connect(databaseURL)
     } catch (error) {
-        handleError(error);
+        console.log(error);
     }
 }
 
@@ -182,9 +186,10 @@ async function seedDatabase() {
     try {
         await GeneralUser.deleteMany({});
         await GeneralUser.insertMany(seedGeneralUsers);
-        await seedPoliceUsers.insertMany(seedPoliceUsers);
+        await PoliceUser.insertMany(seedPoliceUsers);
+        await MissingPerson.insertMany(seedMissingPersons)
     } catch (error) {
-        handleError(error);
+        console.log(error);
     }
 }
 
@@ -192,11 +197,12 @@ async function databaseDisconnector() {
     try {
         await mongoose.connection.close()
     } catch (error) {
-        handleError(error);
+        console.log(error);
     } 
 }
 
 module.exports = {
     databaseConnector, 
+    seedDatabase,
     databaseDisconnector
 }
