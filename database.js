@@ -4,8 +4,6 @@ const MissingPerson = require('./src/models/missing_persons');
 
 const mongoose = require('mongoose');
 
-const dotenv = require("dotenv");
-dotenv.config();
 
 // Define database connector function. Takes databaseURL variable as a parameter to determine
 // the appropriate url for the database for the environment
