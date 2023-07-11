@@ -6,7 +6,10 @@
   "scripts": {
     "start-dev": "NODE_ENV=development node index.js",
     "start-prod": "NODE_ENV=production node index.js",
-    "start-test": "NODE_ENV=test jest"
+    "start-test": "NODE_ENV=test jest",
+    "seed-prod": "NODE_ENV=production node seed_database.js",
+    "seed-dev": "NODE_ENV=development node seed_database.js",
+    "seed-test": "NODE_ENV=test node seed_database.js"
   },
   "keywords": [],
   "author": "Sarah Landis and Connie Jacques",
