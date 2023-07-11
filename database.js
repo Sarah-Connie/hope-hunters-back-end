@@ -4,6 +4,9 @@ const MissingPerson = require('./src/models/missing_persons');
 
 const mongoose = require('mongoose');
 
+const dotenv = require("dotenv");
+dotenv.config();
+
 // Define database connector function. Takes databaseURL variable as a parameter to determine
 // the appropriate url for the database for the environment
 async function databaseConnector(databaseURL) {
@@ -187,8 +190,9 @@ const seedMissingPersons = [
 ]
 
 // Function to seed above data into the database
-async function seedDatabase() {
+async function seedDatabase(databaseURL) {
     try {
+        await mongoose.connect(databaseURL)
         await GeneralUser.deleteMany({});
         await GeneralUser.insertMany(seedGeneralUsers);
         await PoliceUser.deleteMany({});
