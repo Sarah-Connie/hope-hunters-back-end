@@ -4,7 +4,8 @@ const MissingPerson = require('./src/models/missing_persons');
 
 const mongoose = require('mongoose');
 
-
+// Define database connector function. Takes databaseURL variable as a parameter to determine
+// the appropriate url for the database for the environment
 async function databaseConnector(databaseURL) {
     try {
         await mongoose.connect(databaseURL)
@@ -13,6 +14,7 @@ async function databaseConnector(databaseURL) {
     }
 }
 
+// Data to be seeded into generalusers collection
 const seedGeneralUsers = [
     {
         fullName: 'Peter R',
@@ -37,6 +39,7 @@ const seedGeneralUsers = [
     },
 ]
 
+// Data to be seeded into policeusers collection
 const seedPoliceUsers = [
     {
         stationName: 'Albany Police Station',
@@ -47,6 +50,7 @@ const seedPoliceUsers = [
     }
 ]
 
+// Data to be seeded into missingpersons collection
 const seedMissingPersons = [
     {
         fullName: 'Keira Janssen',
@@ -182,17 +186,20 @@ const seedMissingPersons = [
     }
 ]
 
+// Function to seed above data into the database
 async function seedDatabase() {
     try {
         await GeneralUser.deleteMany({});
         await GeneralUser.insertMany(seedGeneralUsers);
         await PoliceUser.insertMany(seedPoliceUsers);
         await MissingPerson.insertMany(seedMissingPersons)
+        await mongoose.connection.close()
     } catch (error) {
         console.log(error);
     }
 }
 
+// Function to close an established database connection
 async function databaseDisconnector() {
     try {
         await mongoose.connection.close()
