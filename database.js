@@ -191,7 +191,9 @@ async function seedDatabase() {
     try {
         await GeneralUser.deleteMany({});
         await GeneralUser.insertMany(seedGeneralUsers);
+        await PoliceUser.deleteMany({});
         await PoliceUser.insertMany(seedPoliceUsers);
+        await MissingPerson.deleteMany({});
         await MissingPerson.insertMany(seedMissingPersons)
         await mongoose.connection.close()
     } catch (error) {
