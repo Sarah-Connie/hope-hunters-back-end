@@ -2,12 +2,13 @@ const dotenv = require('dotenv')
 dotenv.config();
 
 const express = require('express');
-// const mongoose = require('mongoose')
 const app = express();
 
+// Define port and host url as per environmental variable or specified value
 const PORT = process.env.PORT || 3000
 const HOST = process.env.HOST || '127.0.0.1'
 
+// Define helmet policies
 const helmet = require('helmet')
 app.use(helmet());
 app.use(helmet.permittedCrossDomainPolicies());
@@ -18,6 +19,7 @@ app.use(helmet.contentSecurityPolicy({
 	}
 }))
 
+// Define approved connection origins
 const cors = require('cors')
 let corsOptions = {
 	origin: ["http://localhost:3000"],
@@ -29,10 +31,11 @@ app.use(cors(corsOptions))
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 
+// Define database urls for production, development and testing environments  
 let databaseURL = "";
 switch(process.env.NODE_ENV.toLowerCase()){
 	case "production":
-		// databaseURL = process.env.DATABASE_URL;
+		databaseURL = process.env.databaseURL;
 		break;
 	case "development":
 		databaseURL = 'mongodb://localhost:27017/hope-hunters-dev';
@@ -46,6 +49,7 @@ switch(process.env.NODE_ENV.toLowerCase()){
 
 const { databaseConnector } = require("./database")
 
+// All database connector function and pass in the appropriate database url as per environment
 databaseConnector(databaseURL).then(() => {
 	console.log("Database connection established.")
 }).catch(error => {
@@ -54,6 +58,7 @@ databaseConnector(databaseURL).then(() => {
 })
 
 
+// Define route to check database status and details for debugging purposes
 app.get("/databaseHealth", (request, response) => {
     let databaseState = mongoose.connection.readyState;
     let databaseName = mongoose.connection.name;
