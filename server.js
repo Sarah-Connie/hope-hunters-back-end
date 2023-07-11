@@ -35,7 +35,7 @@ app.use(express.urlencoded({extended: true}))
 let databaseURL = "";
 switch(process.env.NODE_ENV.toLowerCase()){
 	case "production":
-		databaseURL = process.env.databaseURL;
+		databaseURL = process.env.DATABASE_URL;
 		break;
 	case "development":
 		databaseURL = 'mongodb://localhost:27017/hope-hunters-dev';
