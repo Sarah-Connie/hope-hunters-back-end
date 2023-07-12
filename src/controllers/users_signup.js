@@ -1,8 +1,6 @@
 const { GeneralUser } = require('../models/general_users');
 const { PoliceUser } = require('../models/police_users')
 
-const nodemailer = require('nodemailer');
-const sgTransport = require('nodemailer-sendgrid-transport');
 
 const { transporter } = require('../helper_functions/nodemailer_transporter')
 
