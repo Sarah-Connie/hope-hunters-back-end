@@ -5,7 +5,7 @@ dotenv.config();
 
 
 function generateJWT(userDetails) {
-    return jwt.sign(userDetails, process.env.JWT_SECRET);
+    return jwt.sign({email: userDetails}, process.env.JWT_SECRET, {expiresIn: '7d'});
 }
 
 function verifyJWT(JWT) {
