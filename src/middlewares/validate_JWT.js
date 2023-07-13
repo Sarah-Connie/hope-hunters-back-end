@@ -17,8 +17,9 @@ const validateRequest = (request, response, next) => {
         }
         // Verify JWT
         verifyJWT(suppliedToken);
+        request.user = suppliedToken.email
         // If no errors call next()
-        return next(suppliedToken.email);
+        return next();
     } catch (error) {
         next(error);
     }
