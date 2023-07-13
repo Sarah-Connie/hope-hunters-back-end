@@ -10,7 +10,7 @@ function generateJWT(userDetails) {
 
 function verifyJWT(JWT) {
     try{
-        return jwt.verify(token, process.env.JWT_SECRET_KEY);
+        return jwt.verify(JWT, process.env.JWT_SECRET_KEY);
     } catch (error) {
         throw new Error("Invalid JWT.")
     }
