@@ -16,7 +16,7 @@ const signup = async (request, response, next) => {
                 let newGeneralUser = new GeneralUser({
                     fullName: request.body.fullName,
                     email: request.body.email,
-                    password: request.body.password,
+                    password: encryptString(request.body.password),
                     admin: request.body.admin
                 })
     
@@ -57,7 +57,7 @@ const signup = async (request, response, next) => {
                     policeAreaCommand: request.body.policeAreaCommand,
                     policeDistrict: request.body.policeDistrict,
                     email: request.body.email,
-                    password: request.body.password
+                    password: encryptString(request.body.password)
                 })
     
                 newPoliceUser.save()
