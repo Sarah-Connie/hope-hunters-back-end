@@ -25,11 +25,7 @@ const PoliceUsersSchema = new mongoose.Schema({
         required: true
     },
     jwt: {
-      jwt: String,
-      expiry: {
-            type: Date,
-            expires: Date.now() + 7
-      }
+      type: String
     }
 });
 

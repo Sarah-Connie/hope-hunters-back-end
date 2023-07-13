@@ -21,11 +21,7 @@ const GeneralUsersSchema = new mongoose.Schema({
         default: false
     },
     jwt: {
-        jwt: String,
-        expiry: {
-              type: Date,
-              expires: Date.now() + 7
-        }
+        type: String
     }
 });
 
