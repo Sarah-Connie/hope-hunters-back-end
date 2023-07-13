@@ -19,7 +19,7 @@ const refreshJWT = async (request, response) => {
     })
     if (updateGeneralToken) {
         // If JWT was successfully updated on a document in the general users collection return the new JWT
-        response.status(200).send(jwtoken)
+        response.status(200).send(newToken)
     }
     
     // // Otherwise, try to find the user document by querying the police users collection with the old token
@@ -29,7 +29,7 @@ const refreshJWT = async (request, response) => {
     })
     if (updatePoliceToken) {
         // If JWT was successfully updated on a document in the police users collection return the new JWT
-        response.status(200).send(jwtoken)
+        response.status(200).send(newToken)
     } else {
     // Otherwise return an error
     response.status(400).json({error: 'Unable to update JWT'})
