@@ -24,3 +24,5 @@ const validateRequest = (request, response, next) => {
         next(error);
     }
 }
+
+module.exports = { validateRequest }
