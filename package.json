@@ -7,6 +7,7 @@
     "start-dev": "NODE_ENV=development nodemon index.js",
     "start-prod": "NODE_ENV=production node index.js",
     "start-test": "NODE_ENV=test jest",
+    "jest-coverage": "NODE_ENV=test jest --collect-coverage",
     "seed-prod": "NODE_ENV=production node seed_database.js",
     "seed-dev": "NODE_ENV=development node seed_database.js",
     "seed-test": "NODE_ENV=test node seed_database.js"
