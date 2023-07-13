@@ -5,7 +5,7 @@ const { PoliceUser } = require('../models/police_users')
 const { transporter } = require('../helper_functions/nodemailer_transporter')
 
 
-const signup = async (request, response, next) => {
+const signup = async (request, response) => {
     if (request.body.fullName) {
         await GeneralUser.findOne({email: request.body.email}, function(error, user) {
             if (error) {
@@ -31,7 +31,7 @@ const signup = async (request, response, next) => {
                     subject: "Verify Email Address - Hope Helpers",
                     text: 'Hello '+ request.body.fullName +',\n\n' + 
                             'Please verify your email address by clicking the link: \nhttp:\/\/' 
-                            + request.headers.host + '\/general\/' + '\/confirmation\/' + request.body.email 
+                            + request.headers.host + '\/general' + '\/confirmation\/' + request.body.email 
                             + '\n\nThank You!\n' 
                     };
                 
@@ -71,7 +71,7 @@ const signup = async (request, response, next) => {
                     subject: "Verify Email Address - Hope Helpers",
                     text: 'Welcom '+ request.body.stationNameName +',\n\n' + 
                             'Please verify your email address by clicking the link: \nhttp:\/\/' 
-                            + request.headers.host + '\/police\/' + '\/confirmation\/' + request.body.email 
+                            + request.headers.host + '\/police' + '\/confirmation\/' + request.body.email 
                             + '\n\nThank You!\n' 
                     };
                     
