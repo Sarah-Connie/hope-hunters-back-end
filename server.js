@@ -4,8 +4,10 @@ dotenv.config();
 const express = require('express');
 const app = express();
 
+const mongoose = require('mongoose');
+
 // Define port and host url as per environmental variable or specified value
-const PORT = process.env.PORT || 3000
+const PORT = 3000
 const HOST = process.env.HOST || '127.0.0.1'
 
 // Define helmet policies
@@ -41,7 +43,7 @@ switch(process.env.NODE_ENV.toLowerCase()){
 		databaseURL = 'mongodb://localhost:27017/hope-hunters-dev';
 		break;
 	case "test":
-		databaseURL = 'mongodb://localhost:27017/hope-hunters_testdb';
+		databaseURL = 'mongodb://localhost:27017/hope-hunters-testdb';
 		break;
 	default:
 		console.error("Unable to connect to database");
@@ -73,25 +75,8 @@ app.get("/databaseHealth", (request, response) => {
     })
 });
 
-// app.get("/", (request, response) => {
-// 	response.json({
-// 		message:"Welcome to the note taking backend"
-// 	});
-// });
-
-// const notesRouter = require('./routes/notes_routes')
-// app.use("/notes", notesRouter)
-
-// const usersRouter = require('./routes/users_routes')
-// app.use("/users", usersRouter)
-
-// app.get('*', (request, response) =>{
-// 	response.status(404)
-// 	response.json({
-// 		message: "Route not found",
-// 		path: request.path
-// 	})
-// })
+const usersRouter = require('./src/routes/users_routes')
+app.use("/users", usersRouter);
 
 module.exports = {
 	app, HOST, PORT
