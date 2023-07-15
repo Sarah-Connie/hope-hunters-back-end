@@ -12,8 +12,8 @@ const getUsers = async (request, response) => {
     // Get all documents in the policeusers collection
     let policeUsers = await PoliceUser.find()
                                 .catch(error => {response.status(400).json({error: 'Unable find police users.'})})
-    // Response with documents in two arrays
-    response.status(200).send([generalUsers, policeUsers])    
+    // Response with documents in two arrays 
+    response.status(200).send([generalUsers, policeUsers]) 
 }
 
 module.exports = { getUsers }
