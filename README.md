@@ -40,12 +40,24 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 **HTTP Method:** GET
 **Authentication Type:** N/A
 **Authorisation Required:** N/A
-**Response Body:** NIL
+**Response Body:** Nil
 **Successful Response Example:**
 ![/users/ example response]('./assets/route_examples/get_all_users.png')
 
+**Description:** User sign up. Adds a new user to the generalusers or policeusers collection
+**URL Path:** /users/signup
+**HTTP Method:** POST
+**Authentication Type:** Nil
+**Authorisation Required:** Nil
+**Response Body:** 
+![/users/signup example request body fields for general users]('./assets/route_examples/user_signup_request.png)
+**Successful Response Example:**
+![/users/signup example response]('./assets/route_examples/users_signup_response.png)
+
+
 **Description:**
 **URL Path:**
+**HTTP Method:**
 **Authentication Type:**
 **Authorisation Required:**
 **Response Body:**
@@ -54,14 +66,7 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 
 **Description:**
 **URL Path:**
-**Authentication Type:**
-**Authorisation Required:**
-**Response Body:**
-**Successful Response Example:**
-
-
-**Description:**
-**URL Path:**
+**HTTP Method:**
 **Authentication Type:**
 **Authorisation Required:**
 **Response Body:**
@@ -69,6 +74,7 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 
 **Description:**
 **URL Path:**
+**HTTP Method:**
 **Authentication Type:**
 **Authorisation Required:**
 **Response Body:**
@@ -76,6 +82,7 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 
 **Description:**
 **URL Path:**
+**HTTP Method:**
 **Authentication Type:**
 **Authorisation Required:**
 **Response Body:**
@@ -83,6 +90,7 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 
 **Description:**
 **URL Path:**
+**HTTP Method:**
 **Authentication Type:**
 **Authorisation Required:**
 **Response Body:**
