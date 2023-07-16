@@ -27,4 +27,4 @@ const GeneralUsersSchema = new mongoose.Schema({
 
 const GeneralUser = mongoose.model('GeneralUser', GeneralUsersSchema);
 
-module.exports = GeneralUser
+module.exports = { GeneralUser }

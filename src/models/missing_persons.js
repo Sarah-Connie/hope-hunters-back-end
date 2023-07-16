@@ -87,4 +87,4 @@ const MissingPersonsSchema = new mongoose.Schema({
 
 const MissingPerson = mongoose.model('MissingPerson', MissingPersonsSchema, 'missingpersons');
 
-module.exports = MissingPerson
+module.exports = { MissingPerson }

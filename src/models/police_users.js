@@ -31,4 +31,4 @@ const PoliceUsersSchema = new mongoose.Schema({
 
 const PoliceUser = mongoose.model('PoliceUser', PoliceUsersSchema);
 
-module.exports = PoliceUser
+module.exports = { PoliceUser }
