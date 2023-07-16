@@ -14,7 +14,7 @@ switch(process.env.NODE_ENV.toLowerCase()){
 		databaseURL = 'mongodb://localhost:27017/hope-hunters-dev';
 		break;
 	case "test":
-		databaseURL = 'mongodb://localhost:27017/hope-hunters_testdb';
+		databaseURL = 'mongodb://localhost:27017/hope-hunters-testdb';
 		break;
 	default:
 		console.error("Unable to connect to database");
