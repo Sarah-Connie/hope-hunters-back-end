@@ -10,12 +10,20 @@ let decipher = crypto.createDecipheriv(encAlgorithm, encPrivateKey, encIV);
 
 // Encrypt a plaintext string
 function encryptString(data){
-    return cipher.update(data, 'utf8', 'hex') + cipher.final('hex');
+    try {
+        return cipher.update(data, 'utf8', 'hex') + cipher.final('hex');
+    } catch (error) {
+        console.log(`Missing parameter resulted in error: ` + error)
+    }
 }
 
 // Decrypt an encoded string to a plaintext string
 function decryptString(data){
-    return decipher.update(data, 'hex', 'utf8') + decipher.final('utf8');
+    try {
+        return decipher.update(data, 'hex', 'utf8') + decipher.final('utf8');
+    } catch (error) {
+        console.log(`Missing parameter resulted in error: ` + error)
+    }
 }
 
 module.exports = {
