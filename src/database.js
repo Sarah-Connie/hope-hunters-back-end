@@ -1,6 +1,6 @@
-const GeneralUser = require('./models/general_users');
-const PoliceUser = require('./models/police_users');
-const MissingPerson = require('./models/missing_persons');
+const { GeneralUser } = require('./models/general_users');
+const { PoliceUser } = require('./models/police_users');
+const { MissingPerson } = require('./models/missing_persons');
 
 const mongoose = require('mongoose');
 
@@ -189,18 +189,14 @@ const seedMissingPersons = [
 
 // Function to seed above data into the database
 async function seedDatabase(databaseURL) {
-    try {
-        await mongoose.connect(databaseURL)
-        await GeneralUser.deleteMany({});
-        await GeneralUser.insertMany(seedGeneralUsers);
-        await PoliceUser.deleteMany({});
-        await PoliceUser.insertMany(seedPoliceUsers);
-        await MissingPerson.deleteMany({});
-        await MissingPerson.insertMany(seedMissingPersons)
-        await mongoose.connection.close()
-    } catch (error) {
-        console.log(error);
-    }
+    await mongoose.connect(databaseURL)
+    await GeneralUser.deleteMany({});
+    await GeneralUser.insertMany(seedGeneralUsers);
+    await PoliceUser.deleteMany({});
+    await PoliceUser.insertMany(seedPoliceUsers);
+    await MissingPerson.deleteMany({});
+    await MissingPerson.insertMany(seedMissingPersons)
+    await mongoose.connection.close()
 }
 
 // Function to close an established database connection
