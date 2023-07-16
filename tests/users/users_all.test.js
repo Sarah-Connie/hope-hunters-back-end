@@ -5,7 +5,7 @@ const { app } = require('../../src/server');
 
 
 describe('users/ route exists.', () => {
-	test("Server 'can access users/ route without error", async () => {
+	test("Server can access users/ route without error", async () => {
 		const response = await request(app).get('/users/');
 		expect(response.statusCode).toEqual(200);
 	});
@@ -17,9 +17,19 @@ describe('users/ route exists.', () => {
 		const response = await request(app).get('/users/');
 		expect(response.body).toBeTruthy;
 	});
-    test('Response to contain two arrays', async () => {
+	test('Response to contain two arrays', async () => {
 		const response = await request(app).get('/users/');
-		expect(response.body).toEqual([[], []]);
+		expect(response.body).toHaveLength(2)
+	});
+    test('Second array in response to contain an object', async () => {
+		const response = await request(app).get('/users/');
+		expect(typeof(response.body[1][0])).toBe('object');
+	});
+	test('Response to contain two arrays', async () => {
+		const response = await request(app).get('/users/');
+		expect(response.body[1][0]).toHaveProperty('policeAreaCommand');
+		expect(response.body[1][0]).toHaveProperty('policeDistrict');
+		expect(response.body[1][0]).not.toHaveProperty('fullName');
 	});
 
     afterAll(done => {
