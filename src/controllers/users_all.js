@@ -8,10 +8,10 @@ const PoliceUser = require('../models/police_users');
 const getUsers = async (request, response) => {
     // Get all documents in the generalusers collection
     let generalUsers = await GeneralUser.find()
-                                .catch(error => {response.status(400).json({error: 'Unable find general users.'})})
+                                .catch(error => {response.status(404).json({error: 'Unable to access general users documents.'})})
     // Get all documents in the policeusers collection
     let policeUsers = await PoliceUser.find()
-                                .catch(error => {response.status(400).json({error: 'Unable find police users.'})})
+                                .catch(error => {response.status(404).json({error: 'Unable to access documents police users.'})})
     // Response with documents in two arrays 
     response.status(200).send([generalUsers, policeUsers]) 
 }
