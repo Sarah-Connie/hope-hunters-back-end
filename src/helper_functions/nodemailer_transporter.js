@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer');
-const sendgridTransport = require('nodemailer-sendgrid-transport')
+const sendgridTransport = require('nodemailer-sendgrid-transport');
 
 
 const transporter = nodemailer.createTransport(
@@ -10,4 +10,4 @@ const transporter = nodemailer.createTransport(
     })
 );
 
-module.exports = transporter
+module.exports = { transporter }
