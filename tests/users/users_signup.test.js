@@ -52,6 +52,7 @@ describe('users/signup route adds a new user to the database and sends an email 
 		expect(response.statusCode).toEqual(400);
 		expect(response.body.message).toEqual('Email address is already associated with an account. Please login.');
 	});
+	
     afterAll(done => {
         // Close database connection after testing finished
         mongoose.connection.close();
