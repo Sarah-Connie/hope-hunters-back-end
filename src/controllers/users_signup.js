@@ -68,7 +68,7 @@ const signup = async (request, response) => {
             return response.status(400).json({message:'Email address is already associated with an account. Please login.'})
         // Otherwise add new user
         } else {
-            let PoliceUser = new PoliceUser({
+            let newPoliceUser = new PoliceUser({
                 stationName: request.body.stationName,
                 policeAreaCommand: request.body.policeAreaCommand,
                 policeDistrict: request.body.policeDistrict,
