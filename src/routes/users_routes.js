@@ -18,6 +18,6 @@ usersRouter.put('/signup/police/confirmation/:email', policeUsersConfirmation);
 
 usersRouter.post('/login', login)
 
-usersRouter.put('/login/refresh-token/:jwt', refreshJWT)
+usersRouter.put('/login/refresh-token', refreshJWT)
 
 module.exports = usersRouter;
