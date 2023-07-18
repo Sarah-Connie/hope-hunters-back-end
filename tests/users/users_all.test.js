@@ -25,7 +25,7 @@ describe('users/ route exists.', () => {
 		const response = await request(app).get('/users/');
 		expect(typeof(response.body[1][0])).toBe('object');
 	});
-	test('Response to contain two arrays', async () => {
+	test('Check second array in response object contains the correct data by checking the expected fields exist', async () => {
 		const response = await request(app).get('/users/');
 		expect(response.body[1][0]).toHaveProperty('policeAreaCommand');
 		expect(response.body[1][0]).toHaveProperty('policeDistrict');
