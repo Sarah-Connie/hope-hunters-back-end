@@ -12,7 +12,7 @@ function generateJWT(userDetails) {
 // Verify a provided JWT is valid with the secret stored in an environmental variable.
 function verifyJWT(JWT) {
     try{
-        return jwt.verify(JWT, process.env.JWT_SECRET_KEY);
+        return jwt.verify(JWT, process.env.JWT_SECRET);
     } catch (error) {
         throw new Error("Invalid JWT.")
     }
