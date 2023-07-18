@@ -25,7 +25,8 @@ const seedGeneralUsers = [
     {
         fullName: 'Peter R',
         email: 'peter@email.com',
-        password: password
+        password: password,
+        jwt: encryptString(generateJWT('megan@email.com'))
     },
     {
         fullName: 'Julia A',
