@@ -16,8 +16,8 @@ usersRouter.post('/signup', signup);
 usersRouter.put('/signup/general/confirmation/:email', generalUsersConfirmation);
 usersRouter.put('/signup/police/confirmation/:email', policeUsersConfirmation);
 
-usersRouter.post('./login', login)
+usersRouter.post('/login', login)
 
-usersRouter.put('./login/refresh-token/:jwt', refreshJWT)
+usersRouter.put('/login/refresh-token/:jwt', refreshJWT)
 
 module.exports = usersRouter;
