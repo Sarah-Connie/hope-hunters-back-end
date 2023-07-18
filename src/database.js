@@ -3,6 +3,7 @@ const { PoliceUser } = require('./models/police_users');
 const { MissingPerson } = require('./models/missing_persons');
 
 const { encryptString } = require('./helper_functions/cryptography_management');
+const { generateJWT } = require('./helper_functions/JWT_management');
 
 const mongoose = require('mongoose');
 
@@ -40,7 +41,8 @@ const seedGeneralUsers = [
         fullName: 'Megan C',
         email: 'megan@email.com',
         password: password,
-        admin: true
+        admin: true,
+        jwt: encryptString(generateJWT('megan@email.com'))
     },
 ]
 
