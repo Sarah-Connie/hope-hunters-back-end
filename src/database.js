@@ -2,6 +2,8 @@ const { GeneralUser } = require('./models/general_users');
 const { PoliceUser } = require('./models/police_users');
 const { MissingPerson } = require('./models/missing_persons');
 
+const { encryptString } = require('./helper_functions/cryptography_management');
+
 const mongoose = require('mongoose');
 
 
@@ -15,27 +17,29 @@ async function databaseConnector(databaseURL) {
     }
 }
 
+let password = encryptString('password1234')
+
 // Data to be seeded into generalusers collection
 const seedGeneralUsers = [
     {
         fullName: 'Peter R',
         email: 'peter@email.com',
-        password: 'password1234'
+        password: password
     },
     {
         fullName: 'Julia A',
         email: 'julia@email.com',
-        password: 'password1234'
+        password: password
     },
     {
         fullName: 'Steve M',
         email: 'steve@email.com',
-        password: 'password1234'
+        password: password
     },
     {
         fullName: 'Megan C',
         email: 'megan@email.com',
-        password: 'password1234',
+        password: password,
         admin: true
     },
 ]
@@ -47,7 +51,7 @@ const seedPoliceUsers = [
         policeAreaCommand: 'Southern Region',
         policeDistrict: 'Murray River',
         email: 'albanytest@police.nsw.gov.au',
-        password: 'password1234'
+        password: password
     }
 ]
 
