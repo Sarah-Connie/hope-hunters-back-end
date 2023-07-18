@@ -13,7 +13,7 @@ const validateRequest = (request, response, next) => {
     try {
         // If no JWT send response with an error message
         if (!suppliedToken) {
-            response.status(400).json({error: 'User authorisation could not be verified.'})
+            return response.status(401).json({error: 'User authorisation could not be verified.'})
         }
         // Verify JWT
         verifyJWT(suppliedToken);
@@ -21,7 +21,7 @@ const validateRequest = (request, response, next) => {
         // If no errors call next()
         return next();
     } catch (error) {
-        next(error);
+        return response.status(400).json({error: 'User authorisation could not be verified.'})
     }
 }
 
