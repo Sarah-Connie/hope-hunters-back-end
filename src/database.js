@@ -1,6 +1,14 @@
-const GeneralUser = require('./src/models/general_users');
-const PoliceUser = require('./src/models/police_users');
-const MissingPerson = require('./src/models/missing_persons');
+const { GeneralUser } = require('./models/general_users');
+const { PoliceUser } = require('./models/police_users');
+const { MissingPerson } = require('./models/missing_persons');
+
+const { encryptString } = require('./helper_functions/cryptography_management');
+const { generateJWT } = require('./helper_functions/JWT_management');
+
+const jwt = require('jsonwebtoken');
+
+const dotenv = require('dotenv');
+dotenv.config();
 
 const mongoose = require('mongoose');
 
@@ -15,28 +23,33 @@ async function databaseConnector(databaseURL) {
     }
 }
 
+let password = encryptString('password1234')
+
 // Data to be seeded into generalusers collection
 const seedGeneralUsers = [
     {
         fullName: 'Peter R',
         email: 'peter@email.com',
-        password: 'password1234'
+        password: password,
+        jwt: encryptString(jwt.sign({email: 'peter@email.com'}, process.env.JWT_SECRET))
     },
     {
         fullName: 'Julia A',
         email: 'julia@email.com',
-        password: 'password1234'
+        password: password
     },
     {
         fullName: 'Steve M',
         email: 'steve@email.com',
-        password: 'password1234'
+        password: password,
+        jwt: encryptString(jwt.sign({email: 'steve@email.com'}, process.env.JWT_SECRET))
     },
     {
         fullName: 'Megan C',
         email: 'megan@email.com',
-        password: 'password1234',
-        admin: true
+        password: password,
+        admin: true,
+        jwt: encryptString(jwt.sign({email: 'megan@email.com'}, process.env.JWT_SECRET))
     },
 ]
 
@@ -47,7 +60,7 @@ const seedPoliceUsers = [
         policeAreaCommand: 'Southern Region',
         policeDistrict: 'Murray River',
         email: 'albanytest@police.nsw.gov.au',
-        password: 'password1234'
+        password: password
     }
 ]
 
@@ -189,18 +202,14 @@ const seedMissingPersons = [
 
 // Function to seed above data into the database
 async function seedDatabase(databaseURL) {
-    try {
-        await mongoose.connect(databaseURL)
-        await GeneralUser.deleteMany({});
-        await GeneralUser.insertMany(seedGeneralUsers);
-        await PoliceUser.deleteMany({});
-        await PoliceUser.insertMany(seedPoliceUsers);
-        await MissingPerson.deleteMany({});
-        await MissingPerson.insertMany(seedMissingPersons)
-        await mongoose.connection.close()
-    } catch (error) {
-        console.log(error);
-    }
+    await mongoose.connect(databaseURL)
+    await GeneralUser.deleteMany({});
+    await GeneralUser.insertMany(seedGeneralUsers);
+    await PoliceUser.deleteMany({});
+    await PoliceUser.insertMany(seedPoliceUsers);
+    await MissingPerson.deleteMany({});
+    await MissingPerson.insertMany(seedMissingPersons)
+    await mongoose.connection.close()
 }
 
 // Function to close an established database connection

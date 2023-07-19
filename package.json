@@ -1,15 +1,16 @@
 {
-  "name": "hope-hunters-back-end",
+  "name": "hope-helpers-back-end",
   "version": "1.0.0",
   "description": "Hope Hunters Website Back End",
   "main": "index.js",
   "scripts": {
-    "start-dev": "NODE_ENV=development node index.js",
+    "start-dev": "NODE_ENV=development nodemon index.js",
     "start-prod": "NODE_ENV=production node index.js",
-    "start-test": "NODE_ENV=test jest",
-    "seed-prod": "NODE_ENV=production node seed_database.js",
-    "seed-dev": "NODE_ENV=development node seed_database.js",
-    "seed-test": "NODE_ENV=test node seed_database.js"
+    "start-test": "NODE_ENV=test jest --detectOpenHandles",
+    "jest-coverage": "NODE_ENV=test jest --collect-coverage",
+    "seed-prod": "NODE_ENV=production node src/seed_database.js",
+    "seed-dev": "NODE_ENV=development node src/seed_database.js",
+    "seed-test": "NODE_ENV=test node src/seed_database.js"
   },
   "keywords": [],
   "author": "Sarah Landis and Connie Jacques",
@@ -29,5 +30,11 @@
     "mongoose": "^7.3.2",
     "nodemailer": "^6.9.3",
     "nodemailer-sendgrid-transport": "^0.2.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }

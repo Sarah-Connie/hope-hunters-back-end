@@ -21,14 +21,10 @@ const GeneralUsersSchema = new mongoose.Schema({
         default: false
     },
     jwt: {
-        jwt: String,
-        expiry: {
-              type: Date,
-              expires: Date.now() + 7
-        }
+        type: String
     }
 });
 
 const GeneralUser = mongoose.model('GeneralUser', GeneralUsersSchema);
 
-module.exports = GeneralUser
+module.exports = { GeneralUser }

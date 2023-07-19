@@ -25,14 +25,10 @@ const PoliceUsersSchema = new mongoose.Schema({
         required: true
     },
     jwt: {
-      jwt: String,
-      expiry: {
-            type: Date,
-            expires: Date.now() + 7
-      }
+      type: String
     }
 });
 
 const PoliceUser = mongoose.model('PoliceUser', PoliceUsersSchema);
 
-module.exports = PoliceUser
+module.exports = { PoliceUser }

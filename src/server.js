@@ -4,12 +4,14 @@ dotenv.config();
 const express = require('express');
 const app = express();
 
+const mongoose = require('mongoose');
+
 // Define port and host url as per environmental variable or specified value
-const PORT = process.env.PORT || 3000
+const PORT = 3000
 const HOST = process.env.HOST || '127.0.0.1'
 
 // Define helmet policies
-const helmet = require('helmet')
+const helmet = require('helmet');
 app.use(helmet());
 app.use(helmet.permittedCrossDomainPolicies());
 app.use(helmet.referrerPolicy());
@@ -17,19 +19,19 @@ app.use(helmet.contentSecurityPolicy({
 	directives:{
 		defaultSrc:["self"]
 	}
-}))
+}));
 
 // Define approved connection origins
-const cors = require('cors')
+const cors = require('cors');
 let corsOptions = {
 	origin: ["http://localhost:3000"],
 	optionsSuccessStatus: 200
-}
+};
 
-app.use(cors(corsOptions))
+app.use(cors(corsOptions));
 
 app.use(express.json());
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({extended: true}));
 
 // Define database urls for production, development and testing environments  
 let databaseURL = "";
@@ -41,13 +43,13 @@ switch(process.env.NODE_ENV.toLowerCase()){
 		databaseURL = 'mongodb://localhost:27017/hope-hunters-dev';
 		break;
 	case "test":
-		databaseURL = 'mongodb://localhost:27017/hope-hunters_testdb';
+		databaseURL = 'mongodb://localhost:27017/hope-hunters-testdb';
 		break;
 	default:
 		console.error("Unable to connect to database");
-}
+};
 
-const { databaseConnector } = require("./database")
+const { databaseConnector } = require("./database");
 
 // All database connector function and pass in the appropriate database url as per environment
 databaseConnector(databaseURL).then(() => {
@@ -55,7 +57,7 @@ databaseConnector(databaseURL).then(() => {
 }).catch(error => {
 	console.log("Unable to establish database connection.")
 	console.log(error)
-})
+});
 
 
 // Define route to check database status and details for debugging purposes
@@ -73,25 +75,8 @@ app.get("/databaseHealth", (request, response) => {
     })
 });
 
-// app.get("/", (request, response) => {
-// 	response.json({
-// 		message:"Welcome to the note taking backend"
-// 	});
-// });
-
-// const notesRouter = require('./routes/notes_routes')
-// app.use("/notes", notesRouter)
-
-// const usersRouter = require('./routes/users_routes')
-// app.use("/users", usersRouter)
-
-// app.get('*', (request, response) =>{
-// 	response.status(404)
-// 	response.json({
-// 		message: "Route not found",
-// 		path: request.path
-// 	})
-// })
+const usersRouter = require('./routes/users_routes');
+app.use("/users", usersRouter);
 
 module.exports = {
 	app, HOST, PORT
