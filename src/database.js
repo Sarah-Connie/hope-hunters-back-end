@@ -5,6 +5,11 @@ const { MissingPerson } = require('./models/missing_persons');
 const { encryptString } = require('./helper_functions/cryptography_management');
 const { generateJWT } = require('./helper_functions/JWT_management');
 
+const jwt = require('jsonwebtoken');
+
+const dotenv = require('dotenv');
+dotenv.config();
+
 const mongoose = require('mongoose');
 
 
@@ -26,7 +31,7 @@ const seedGeneralUsers = [
         fullName: 'Peter R',
         email: 'peter@email.com',
         password: password,
-        jwt: encryptString(generateJWT('megan@email.com'))
+        jwt: encryptString(jwt.sign({email: 'peter@email.com'}, process.env.JWT_SECRET))
     },
     {
         fullName: 'Julia A',
@@ -36,14 +41,15 @@ const seedGeneralUsers = [
     {
         fullName: 'Steve M',
         email: 'steve@email.com',
-        password: password
+        password: password,
+        jwt: encryptString(jwt.sign({email: 'steve@email.com'}, process.env.JWT_SECRET))
     },
     {
         fullName: 'Megan C',
         email: 'megan@email.com',
         password: password,
         admin: true,
-        jwt: encryptString(generateJWT('megan@email.com'))
+        jwt: encryptString(jwt.sign({email: 'megan@email.com'}, process.env.JWT_SECRET))
     },
 ]
 
