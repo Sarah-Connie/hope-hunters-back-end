@@ -29,12 +29,12 @@ describe('users/login behaves as expected', () => {
 		const response = await request(app)
 								.post('/users/login')
 								.send({
-									email: "steve@email.com",
+									email: "julia@email.com",
 	                                password: "password1234"
 								});
 		expect(response.statusCode).toEqual(200);
 		expect(response.type).toBe('application/json');
-		expect(response.body.message).toEqual('A verification email has been sent to steve@email.com.');
+		expect(response.body.message).toEqual('A verification email has been sent to julia@email.com.');
 	});
 	test("User is able to log in if email and password correct and a jwt exists. JWT in response.body", async () => {
 		const response = await request(app)
