@@ -53,6 +53,7 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 **Request Headers:** NIL
 
 **Successful Response Example:**
+
 ![/users/ example response]('./assets/route_examples/get_all_users.png')
 
 
@@ -67,11 +68,13 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 **Authorisation Required:** NIL
 
 **Request Body:** 
+
 ![/users/signup example request body fields for general users]('./assets/route_examples/user_signup_request.png)
 
 **Request Headers:** NIL
 
 **Successful Response Example:**
+
 ![/users/signup example response on success]('./assets/route_examples/users_signup_response.png)
 
 
@@ -90,7 +93,8 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 **Request Headers:** NIL
 
 **Successful Response Example:**
-![users/signup/general/confirmation/:email example response on success]('./assets/route_examples/user_confirmation_response.png')
+
+![/users/signup/general/confirmation/:email example response on success]('./assets/route_examples/user_confirmation_response.png')
 
 
 **URL Path:** /users/signup/police/confirmation/:email
@@ -108,7 +112,8 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 **Request Headers:** NIL
 
 **Successful Response Example:**
-![users/signup/general/confirmation/:email example response on success]('./assets/route_examples/user_confirmation_response.png')
+
+![/users/signup/general/confirmation/:email example response on success]('./assets/route_examples/user_confirmation_response.png')
 
 
 **URL Path:** /users/login
@@ -122,12 +127,14 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 **Authorisation Required:** Email and password must match verified or unverified gereraluser or policeuser document 
 
 **Request Body:**
-![users/login example request body]('./assets/route_examples/user_login_request.png')
+
+![/users/login example request body]('./assets/route_examples/user_login_request.png')
 
 **Request Headers:** NIL
 
 **Successful Response Example:**
-![users/login example response body]('./assets/route_examples/user_login_response.png')
+
+![/users/login example response body]('./assets/route_examples/user_login_response.png')
 
 
 **URL Path:** /users/login/refresh-token
@@ -138,14 +145,61 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 
 **Authentication Type:** JSON Web Token
 
-**Authorisation Required:** Verifiable JSON Web Token must match verified or gereraluser or policeuser document
+**Authorisation Required:** Verifiable JSON Web Token must match verified gereraluser or policeuser document
 
 **Request Body:** NIL
 
 **Request Headers:** authorization: Bearer ${JSON Web Token}
 
 **Successful Response Example:**
+
 ![/users/login/refresh-token example response on success]('./assets/route_examples/refresh_JWT.png')
+
+
+**URL Path:** /users/update
+
+**Description:** Allow a user to change the details in the database for their document only
+
+**HTTP Method:** PUT
+
+**Authentication Type:** JSON Web Token
+
+**Authorisation Required:** Verifiable JSON Web Token must match the verified gereraluser or policeuser document that is to be altered
+
+**Request Body:** Fields to change
+
+![/users/update example request body]('./assets/route_examples/user_update_request.png')
+
+**Request Headers:** authorization: Bearer ${JSON Web Token}
+
+**Successful Response Example:**
+
+Before:
+
+![/users/update example BEFORE request]('./assets/route_examples/user_update_before.png')
+
+After:
+
+![/users/update example response body on success]('./assets/route_examples/user_update_after.png')
+
+
+**URL Path:** /users/delete
+
+**Description:** Allow a user to delete their document from the database
+
+**HTTP Method:** DELETE
+
+**Authentication Type:** JSON Web Token
+
+**Authorisation Required:** Verifiable JSON Web Token must match the verified gereraluser or policeuser document that is to be altered
+
+**Request Body:** NIL
+
+**Request Headers:** authorization: Bearer ${JSON Web Token}
+
+**Successful Response Example:**
+
+![/users/delete example response on success]('./assets/route_examples/users_delete.png')
 
 
 **URL Path:**
