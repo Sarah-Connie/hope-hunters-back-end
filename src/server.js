@@ -76,7 +76,11 @@ app.get("/databaseHealth", (request, response) => {
 });
 
 const usersRouter = require('./routes/users_routes');
+const missingRouter = require('./routes/missing_persons_routes');
+
 app.use("/users", usersRouter);
+app.use("/missing", missingRouter);
+
 
 module.exports = {
 	app, HOST, PORT
