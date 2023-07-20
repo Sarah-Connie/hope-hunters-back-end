@@ -35,7 +35,7 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 
 ### Endpoints:
 
-*Development Route ONLY*
+*Development Route ONLY* \
 **URL Path:** /users/ \
 **Description:** Get all documents in the generalusers and policeusers collection \
 **HTTP Method:** GET \
@@ -119,7 +119,7 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 **HTTP Method:** PUT \
 **Authentication Type:** JSON Web Token \
 **Authorisation Required:** Verifiable JSON Web Token must match the verified gereraluser or policeuser document that is to be altered \
-**Request Body:** Fields to change \
+**Request Body:** Fields to change
 
 ![/users/update example request body](./assets/route_examples/user_update_request.png)
 
