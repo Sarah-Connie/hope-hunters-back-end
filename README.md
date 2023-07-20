@@ -54,7 +54,7 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 
 **Successful Response Example:**
 
-![/users/ example response]('./assets/route_examples/get_all_users.png')
+![/users/ example response](./assets/route_examples/get_all_users.png)
 
 
 **URL Path:** /users/signup
@@ -69,13 +69,13 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 
 **Request Body:** 
 
-![/users/signup example request body fields for general users]('./assets/route_examples/user_signup_request.png)
+![/users/signup example request body fields for general users](./assets/route_examples/user_signup_request.png)
 
 **Request Headers:** NIL
 
 **Successful Response Example:**
 
-![/users/signup example response on success]('./assets/route_examples/users_signup_response.png)
+![/users/signup example response on success](./assets/route_examples/users_signup_response.png)
 
 
 **URL Path:** /users/signup/general/confirmation/:email
@@ -94,7 +94,7 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 
 **Successful Response Example:**
 
-![/users/signup/general/confirmation/:email example response on success]('./assets/route_examples/user_confirmation_response.png')
+![/users/signup/general/confirmation/:email example response on success](./assets/route_examples/user_confirmation_response.png)
 
 
 **URL Path:** /users/signup/police/confirmation/:email
@@ -113,7 +113,7 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 
 **Successful Response Example:**
 
-![/users/signup/general/confirmation/:email example response on success]('./assets/route_examples/user_confirmation_response.png')
+![/users/signup/general/confirmation/:email example response on success](./assets/route_examples/user_confirmation_response.png)
 
 
 **URL Path:** /users/login
@@ -128,13 +128,13 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 
 **Request Body:**
 
-![/users/login example request body]('./assets/route_examples/user_login_request.png')
+![/users/login example request body](./assets/route_examples/user_login_request.png)
 
 **Request Headers:** NIL
 
 **Successful Response Example:**
 
-![/users/login example response body]('./assets/route_examples/user_login_response.png')
+![/users/login example response body](./assets/route_examples/user_login_response.png)
 
 
 **URL Path:** /users/login/refresh-token
@@ -153,7 +153,7 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 
 **Successful Response Example:**
 
-![/users/login/refresh-token example response on success]('./assets/route_examples/refresh_JWT.png')
+![/users/login/refresh-token example response on success](./assets/route_examples/refresh_JWT.png)
 
 
 **URL Path:** /users/update
@@ -168,7 +168,7 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 
 **Request Body:** Fields to change
 
-![/users/update example request body]('./assets/route_examples/user_update_request.png')
+![/users/update example request body](./assets/route_examples/user_update_request.png)
 
 **Request Headers:** authorization: Bearer ${JSON Web Token}
 
@@ -176,11 +176,11 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 
 Before:
 
-![/users/update example BEFORE request]('./assets/route_examples/user_update_before.png')
+![/users/update example BEFORE request](./assets/route_examples/user_update_before.png)
 
 After:
 
-![/users/update example response body on success]('./assets/route_examples/user_update_after.png')
+![/users/update example response body on success](./assets/route_examples/user_update_after.png)
 
 
 **URL Path:** /users/delete
@@ -199,7 +199,7 @@ After:
 
 **Successful Response Example:**
 
-![/users/delete example response on success]('./assets/route_examples/users_delete.png')
+![/users/delete example response on success](./assets/route_examples/users_delete.png)
 
 
 **URL Path:**
