@@ -36,7 +36,6 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 ### Endpoints:
 
 *Development Route ONLY*
-
 **URL Path:** /users/ \
 **Description:** Get all documents in the generalusers and policeusers collection \
 **HTTP Method:** GET \
@@ -89,61 +88,42 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 
 
 **URL Path:** /users/login \
-
 **Description:** User log in \
-
 **HTTP Method:** POST \
-
 **Authentication Type:** NIL \
-
 **Authorisation Required:** Email and password must match verified or unverified gereraluser or policeuser document \
-
 **Request Body:**
 
 ![/users/login example request body](./assets/route_examples/user_login_request.png)
 
 **Request Headers:** NIL \
-
 **Successful Response Example:**
 
 ![/users/login example response body](./assets/route_examples/user_login_response.png)
 
 
 **URL Path:** /users/login/refresh-token \
-
 **Description:** Called immediately after user login in front end before redirecting to homepage. Updates jwt on user document and sends new jwt in response.body \
-
 **HTTP Method:** PUT \
-
 **Authentication Type:** JSON Web Token \
-
 **Authorisation Required:** Verifiable JSON Web Token must match verified gereraluser or policeuser document \
-
 **Request Body:** NIL \
-
 **Request Headers:** authorization: Bearer ${JSON Web Token} \
-
 **Successful Response Example:**
 
 ![/users/login/refresh-token example response on success](./assets/route_examples/refresh_JWT.png)
 
 
 **URL Path:** /users/update \
-
 **Description:** Allow a user to change the details in the database for their document only \
-
 **HTTP Method:** PUT \
-
 **Authentication Type:** JSON Web Token \
-
 **Authorisation Required:** Verifiable JSON Web Token must match the verified gereraluser or policeuser document that is to be altered \
-
 **Request Body:** Fields to change \
 
-![/users/update example request body](./assets/route_examples/user_update_request.png) \
+![/users/update example request body](./assets/route_examples/user_update_request.png)
 
 **Request Headers:** authorization: Bearer ${JSON Web Token} \
-
 **Successful Response Example:** \
 Before:
 
@@ -155,19 +135,12 @@ After:
 
 
 **URL Path:** /users/delete \
-
 **Description:** Allow a user to delete their document from the database \
-
 **HTTP Method:** DELETE \
-
 **Authentication Type:** JSON Web Token \
-
 **Authorisation Required:** Verifiable JSON Web Token must match the verified gereraluser or policeuser document that is to be altered \
-
 **Request Body:** NIL \
-
 **Request Headers:** authorization: Bearer ${JSON Web Token} \
-
 **Successful Response Example:**
 
 ![/users/delete example response on success](./assets/route_examples/users_delete.png)
