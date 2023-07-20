@@ -37,143 +37,114 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 
 *Development Route ONLY*
 
-**URL Path:** /users/
-
-**Description:** Get all documents in the generalusers and policeusers collection
-
-
-**HTTP Method:** GET
-
-**Authentication Type:** N/A
-
-**Authorisation Required:** N/A
-
-**Request Body:** NIL
-
-**Request Headers:** NIL
-
+**URL Path:** /users/ \
+**Description:** Get all documents in the generalusers and policeusers collection \
+**HTTP Method:** GET \
+**Authentication Type:** N/A \
+**Authorisation Required:** N/A \
+**Request Body:** NIL \
+**Request Headers:** NIL \
 **Successful Response Example:**
 
 ![/users/ example response](./assets/route_examples/get_all_users.png)
 
 
-**URL Path:** /users/signup
-
-**Description:** User sign up. Adds a new user to the generalusers or policeusers collection
-
-**HTTP Method:** POST
-
-**Authentication Type:** NIL
-
-**Authorisation Required:** NIL
-
+**URL Path:** /users/signup \
+**Description:** User sign up. Adds a new user to the generalusers or policeusers collection \
+**HTTP Method:** POST \
+**Authentication Type:** NIL \
+**Authorisation Required:** NIL \
 **Request Body:** 
 
 ![/users/signup example request body fields for general users](./assets/route_examples/user_signup_request.png)
 
-**Request Headers:** NIL
-
+**Request Headers:** NIL \
 **Successful Response Example:**
 
 ![/users/signup example response on success](./assets/route_examples/users_signup_response.png)
 
 
-**URL Path:** /users/signup/general/confirmation/:email
-
-**Description:** Verify user's email address. When route is hit, add a JSON Web Token to the user document
-
-**HTTP Method:** PUT
-
-**Authentication Type:** NIL
-
-**Authorisation Required:** Email address must match an unverified generaluser document 
-
-**Request Body:** NIL
-
-**Request Headers:** NIL
-
+**URL Path:** /users/signup/general/confirmation/:email \
+**Description:** Verify user's email address. When route is hit, add a JSON Web Token to the user document \
+**HTTP Method:** PUT \
+**Authentication Type:** NIL \
+**Authorisation Required:** Email address must match an unverified generaluser document \
+**Request Body:** NIL \
+**Request Headers:** NIL \
 **Successful Response Example:**
 
 ![/users/signup/general/confirmation/:email example response on success](./assets/route_examples/user_confirmation_response.png)
 
 
-**URL Path:** /users/signup/police/confirmation/:email
-
-**Description:** Verify user's email address. When route is hit, add a JSON Web Token to the user document
-
-**HTTP Method:** PUT
-
-**Authentication Type:** NIL
-
-**Authorisation Required:** Email address must match an unverified policeuser document 
-
-**Request Body:** NIL
-
-**Request Headers:** NIL
-
+**URL Path:** /users/signup/police/confirmation/:email \
+**Description:** Verify user's email address. When route is hit, add a JSON Web Token to the user document \
+**HTTP Method:** PUT \
+**Authentication Type:** NIL \
+**Authorisation Required:** Email address must match an unverified policeuser document \
+**Request Body:** NIL \
+**Request Headers:** NIL \
 **Successful Response Example:**
 
 ![/users/signup/general/confirmation/:email example response on success](./assets/route_examples/user_confirmation_response.png)
 
 
-**URL Path:** /users/login
+**URL Path:** /users/login \
 
-**Description:** User log in. 
+**Description:** User log in \
 
-**HTTP Method:** POST
+**HTTP Method:** POST \
 
-**Authentication Type:** NIL
+**Authentication Type:** NIL \
 
-**Authorisation Required:** Email and password must match verified or unverified gereraluser or policeuser document 
+**Authorisation Required:** Email and password must match verified or unverified gereraluser or policeuser document \
 
 **Request Body:**
 
 ![/users/login example request body](./assets/route_examples/user_login_request.png)
 
-**Request Headers:** NIL
+**Request Headers:** NIL \
 
 **Successful Response Example:**
 
 ![/users/login example response body](./assets/route_examples/user_login_response.png)
 
 
-**URL Path:** /users/login/refresh-token
+**URL Path:** /users/login/refresh-token \
 
-**Description:** Called immediately after user login in front end before redirecting to homepage. Updates jwt on user document and sends new jwt in response.body
+**Description:** Called immediately after user login in front end before redirecting to homepage. Updates jwt on user document and sends new jwt in response.body \
 
-**HTTP Method:** PUT
+**HTTP Method:** PUT \
 
-**Authentication Type:** JSON Web Token
+**Authentication Type:** JSON Web Token \
 
-**Authorisation Required:** Verifiable JSON Web Token must match verified gereraluser or policeuser document
+**Authorisation Required:** Verifiable JSON Web Token must match verified gereraluser or policeuser document \
 
-**Request Body:** NIL
+**Request Body:** NIL \
 
-**Request Headers:** authorization: Bearer ${JSON Web Token}
+**Request Headers:** authorization: Bearer ${JSON Web Token} \
 
 **Successful Response Example:**
 
 ![/users/login/refresh-token example response on success](./assets/route_examples/refresh_JWT.png)
 
 
-**URL Path:** /users/update
+**URL Path:** /users/update \
 
-**Description:** Allow a user to change the details in the database for their document only
+**Description:** Allow a user to change the details in the database for their document only \
 
-**HTTP Method:** PUT
+**HTTP Method:** PUT \
 
-**Authentication Type:** JSON Web Token
+**Authentication Type:** JSON Web Token \
 
-**Authorisation Required:** Verifiable JSON Web Token must match the verified gereraluser or policeuser document that is to be altered
+**Authorisation Required:** Verifiable JSON Web Token must match the verified gereraluser or policeuser document that is to be altered \
 
-**Request Body:** Fields to change
+**Request Body:** Fields to change \
 
-![/users/update example request body](./assets/route_examples/user_update_request.png)
+![/users/update example request body](./assets/route_examples/user_update_request.png) \
 
-**Request Headers:** authorization: Bearer ${JSON Web Token}
+**Request Headers:** authorization: Bearer ${JSON Web Token} \
 
-**Successful Response Example:**
-
+**Successful Response Example:** \
 Before:
 
 ![/users/update example BEFORE request](./assets/route_examples/user_update_before.png)
@@ -183,19 +154,19 @@ After:
 ![/users/update example response body on success](./assets/route_examples/user_update_after.png)
 
 
-**URL Path:** /users/delete
+**URL Path:** /users/delete \
 
-**Description:** Allow a user to delete their document from the database
+**Description:** Allow a user to delete their document from the database \
 
-**HTTP Method:** DELETE
+**HTTP Method:** DELETE \
 
-**Authentication Type:** JSON Web Token
+**Authentication Type:** JSON Web Token \
 
-**Authorisation Required:** Verifiable JSON Web Token must match the verified gereraluser or policeuser document that is to be altered
+**Authorisation Required:** Verifiable JSON Web Token must match the verified gereraluser or policeuser document that is to be altered \
 
-**Request Body:** NIL
+**Request Body:** NIL \
 
-**Request Headers:** authorization: Bearer ${JSON Web Token}
+**Request Headers:** authorization: Bearer ${JSON Web Token} \
 
 **Successful Response Example:**
 
