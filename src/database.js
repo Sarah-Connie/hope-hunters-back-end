@@ -61,6 +61,14 @@ const seedPoliceUsers = [
         policeDistrict: 'Murray River',
         email: 'albanytest@police.nsw.gov.au',
         password: password
+    },
+    {
+        stationName: 'Sawtell Police Station',
+        policeAreaCommand: 'Northern Region',
+        policeDistrict: 'Coffs Clarence',
+        email: 'sawtelltest@police.nsw.gov.au',
+        password: password,
+        jwt: encryptString(jwt.sign({email: 'sawtelltest@police.nsw.gov.au'}, process.env.JWT_SECRET))
     }
 ]
 
