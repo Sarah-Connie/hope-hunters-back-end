@@ -18,7 +18,8 @@ const getUserStatus = (request, response, next) => {
                                 })
                                 .catch(error => { 
                                     // Else return an error message
-                                    return response.status(400).json({error:'Unable to find user document.'});
+                                    // return response.status(400).json({error:'Unable to find user document.'});
+                                    return response.status(400).json({error:'OR failing here?.'});
                                 })
         // Else, search in generalusers collection
         } else {
@@ -32,7 +33,8 @@ const getUserStatus = (request, response, next) => {
                                 next();
                             })
                             .catch(error => { 
-                                return response.status(400).json({error:'Unable to find user document.'});
+                                // return response.status(400).json({error:'Unable to find user document.'});
+                                return response.status(400).json({error:'Failing HERE.'});
                             }) 
     };
 }
