@@ -45,6 +45,12 @@ const seedGeneralUsers = [
         jwt: encryptString(jwt.sign({email: 'steve@email.com'}, process.env.JWT_SECRET))
     },
     {
+        fullName: 'Ken W',
+        email: 'ken@email.com',
+        password: password,
+        jwt: encryptString(jwt.sign({email: 'ken@email.com'}, process.env.JWT_SECRET))
+    },
+    {
         fullName: 'Megan C',
         email: 'megan@email.com',
         password: password,
