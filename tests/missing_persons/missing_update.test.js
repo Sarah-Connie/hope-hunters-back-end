@@ -54,7 +54,6 @@ describe('missing/update allows a police user, admin user or the document owner 
         expect(updatedResponse.statusCode).toEqual(401);
         expect(updatedResponse.body.error).toBe('User unauthorised to alter this document.');
         expect(updatedResponse.body).toHaveProperty('error');
-        
 	});
 
     afterAll(done => {
