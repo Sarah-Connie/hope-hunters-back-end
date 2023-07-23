@@ -201,7 +201,4 @@ After:
 **Request Headers:** authorization: Bearer ${JSON Web Token} \
 **Successful Response Example:**
 
-![/missing/delete/:id example response on success]()
-
-
-
+![/missing/delete/:id example response on success](./assets/route_examples/missing_delete_response.png)
