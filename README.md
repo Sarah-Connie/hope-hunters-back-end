@@ -146,35 +146,62 @@ After:
 ![/users/delete example response on success](./assets/route_examples/users_delete.png)
 
 
-**URL Path:**
-
-**Description:**
-
-**HTTP Method:**
-
-**Authentication Type:**
-
-**Authorisation Required:**
-
-**Request Body:**
-
-**Request Headers:**
-
+**URL Path:** /missing/ \
+**Description:** Allow anyone to get all documents in the missingpersons collection, sorted in descending order by dateAdded (newest to oldest) \
+**HTTP Method:** GET \
+**Authentication Type:** NIL \
+**Authorisation Required:** NIL \
+**Request Body:** NIL \
+**Request Headers:** NIL \
 **Successful Response Example:**
 
+![/missing/ example response on success](./assets/route_examples/missing_all_response1.png)
+![/missing/ example response on success](./assets/route_examples/missing_all_response2.png)
+![/missing/ example response on success](./assets/route_examples/missing_all_response3.png)
 
-**URL Path:**
 
-**Description:**
-
-**HTTP Method:**
-
-**Authentication Type:**
-
-**Authorisation Required:**
-
+**URL Path:** /missing/new \
+**Description:** Allow a user to add a new missing person listing to the database \
+**HTTP Method:** POST \
+**Authentication Type:** JSON Web Token \
+**Authorisation Required:** Verifiable JSON Web Token must match a verified gereraluser or policeuser document \
 **Request Body:**
 
-**Request Headers:**
+![/missing/new example request body](./assets//route_examples/missing_new_request.png)
 
+**Request Headers:** authorization: Bearer ${JSON Web Token} \
 **Successful Response Example:**
+
+![/missing/new example response on success](./assets/route_examples/missing_new_response1.png)
+![/missing/new example response on success](./assets/route_examples/missing_new_response2.png)
+
+
+**URL Path:** /missing/update/:id where :id is the _id of the document to be altered \
+**Description:** Allow a user to update a document in the missingpersons collection \
+**HTTP Method:** PUT \
+**Authentication Type:** JSON Web Token \
+**Authorisation Required:** Verifiable JSON Web Token must match the verified gereraluser document that owns the document to be altered OR belong to any admin user OR belong to any policeuser \
+**Request Body:**
+
+![/missing/update/:id example request body](./assets//route_examples/missing_update_request.png)
+
+**Request Headers:** authorization: Bearer ${JSON Web Token} \
+**Successful Response Example:**
+
+![/missing/update/:id response on success](./assets/route_examples/missing_update_response1.png)
+![/missing/update/:id response on success](./assets/route_examples/missing_update_response2.png)
+
+
+**URL Path:** /missing/delete/:id where :id is the _id of the document to be altered \
+**Description:** Allow a user to permanently a document in the missingpersons collection \
+**HTTP Method:** DELETE \
+**Authentication Type:** JSON Web Token \
+**Authorisation Required:** Verifiable JSON Web Token must match the verified gereraluser document that owns the document to be altered OR belong to any admin user OR belong to any policeuser \
+**Request Body:** NIL \
+**Request Headers:** authorization: Bearer ${JSON Web Token} \
+**Successful Response Example:**
+
+![/missing/delete/:id example response on success]()
+
+
+
