@@ -45,6 +45,12 @@ const seedGeneralUsers = [
         jwt: encryptString(jwt.sign({email: 'steve@email.com'}, process.env.JWT_SECRET))
     },
     {
+        fullName: 'Ken W',
+        email: 'ken@email.com',
+        password: password,
+        jwt: encryptString(jwt.sign({email: 'ken@email.com'}, process.env.JWT_SECRET))
+    },
+    {
         fullName: 'Megan C',
         email: 'megan@email.com',
         password: password,
@@ -61,6 +67,14 @@ const seedPoliceUsers = [
         policeDistrict: 'Murray River',
         email: 'albanytest@police.nsw.gov.au',
         password: password
+    },
+    {
+        stationName: 'Sawtell Police Station',
+        policeAreaCommand: 'Northern Region',
+        policeDistrict: 'Coffs Clarence',
+        email: 'sawtelltest@police.nsw.gov.au',
+        password: password,
+        jwt: encryptString(jwt.sign({email: 'sawtelltest@police.nsw.gov.au'}, process.env.JWT_SECRET))
     }
 ]
 
@@ -73,7 +87,7 @@ const seedMissingPersons = [
             number: 28,
             type: 'years'
         },
-        dateLastSeen: Date.now() - 2,
+        dateLastSeen: (new Date().setDate(new Date().getDate() - 2)),
         currentAge: {
             number: 28,
             type: 'years'
@@ -98,6 +112,7 @@ const seedMissingPersons = [
         },
         gender: 'female',
         distinctiveFeatures: 'flower tattoo left shoulder',
+        dateAdded: (new Date().setDate(new Date().getDate() - 2))
     },
     {
         fullName: 'Bethany Reading',
@@ -106,7 +121,7 @@ const seedMissingPersons = [
             number: 57,
             type: 'years'
         },
-        dateLastSeen: Date.now() - 665,
+        dateLastSeen: (new Date().setDate(new Date().getDate() - 665)),
         currentAge: {
             number: 55,
             type: 'years'
@@ -131,6 +146,7 @@ const seedMissingPersons = [
         },
         gender: 'female',
         distinctiveFeatures: 'glasses in black frame',
+        dateAdded: (new Date().setDate(new Date().getDate() - 35))
     },
     {
         fullName: 'Austin Bond',
@@ -172,7 +188,7 @@ const seedMissingPersons = [
             number: 81,
             type: 'years'
         },
-        dateLastSeen: Date.now() - 7,
+        dateLastSeen: (new Date().setDate(new Date().getDate() - 7)),
         currentAge: {
             number: 81,
             type: 'years'

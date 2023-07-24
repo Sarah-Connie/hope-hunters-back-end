@@ -1,5 +1,4 @@
 const { decryptString } = require('../helper_functions/cryptography_management');
-const { verifyJWT } = require('../helper_functions/JWT_management');
 
 const jwt = require('jsonwebtoken');
 
