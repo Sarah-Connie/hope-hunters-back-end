@@ -202,3 +202,44 @@ After:
 **Successful Response Example:**
 
 ![/missing/delete/:id example response on success](./assets/route_examples/missing_delete_response.png)
+
+
+**URL Path:** /missing/search/:search where :search is a parameter to match a fuzzy search query string on the fields: fullName, areaSuspectedToBe, hairColour, eyeColour, complexion, distinctiveFeatures, age and currentAge \
+**Description:** Allow any user to perform a fuzzy search for any missingpersons document/s \
+**HTTP Method:** GET \
+**Authentication Type:** NIL \
+**Authorisation Required:** NIL \
+**Request Body:** NIL \
+**Request Headers:** NIL \
+**Successful Response Example:**
+
+![/missing/search/:search example url](./assets/route_examples/search_all_url.png)
+![/missing/search/:search example response](./assets/route_examples/search_all_response1.png)
+![/missing/search/:search example response](./assets/route_examples/search_all_response2.png)
+
+
+**URL Path:** /missing/users/search/:search where :search is a parameter to match a fuzzy search query string on the fields: fullName, areaSuspectedToBe, hairColour, eyeColour, complexion, distinctiveFeatures, age and currentAge \
+**Description:** Allow an logged in, verified user to perform a fuzzy search for missingpersons document/s that they own \
+**HTTP Method:** GET \
+**Authentication Type:** JSON Web Token \
+**Authorisation Required:** Verifiable JSON Web Token must match the verified gereraluser or policeuser document that owns the missingpersons document/s being searched for \
+**Request Body:** NIL \
+**Request Headers:** authorization: Bearer ${JSON Web Token} \
+**Successful Response Example:**
+
+![/missing/users/search/:search example url](./assets/route_examples/search_all_url.png)
+![/missing/users/search/:search example response](./assets/route_examples/search_users_response1.png)
+![/missing/users/search/:search example response](./assets/route_examples/search_users_response2.png)
+
+
+**URL Path:** /missing/amber-alerts \
+**Description:** Get all missingpersons documents where the field amberAlert equals true \
+**HTTP Method:** GET \
+**Authentication Type:** NILn \
+**Authorisation Required:** NIL \
+**Request Body:** NIL \
+**Request Headers:** NIL \
+**Successful Response Example:**
+
+![/missing/amber-alerts example response](./assets/route_examples/amber_alert_response1.png)
+![/missing/amber-alerts example response](./assets/route_examples/amber_alert_response2.png)

@@ -33,6 +33,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+
 // Define database urls for production, development and testing environments  
 let databaseURL = "";
 switch(process.env.NODE_ENV.toLowerCase()){

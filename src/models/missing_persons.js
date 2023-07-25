@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+const mongooseFuzzySearching = require('mongoose-fuzzy-searching');
+
 
 const MissingPersonsSchema = new mongoose.Schema({
     fullName: {
@@ -83,6 +85,22 @@ const MissingPersonsSchema = new mongoose.Schema({
         type: Date,
         default: Date.now()
     }
+});
+
+MissingPersonsSchema.plugin(mongooseFuzzySearching, { 
+    fields: [
+        {
+            name: 'gender',
+            minSize: 4,
+            prefixOnly: true
+        },
+        'fullName',
+        'areaSuspectedToBe',
+        'hairColour',
+        'eyeColour',
+        'complexion',
+        'distinctiveFeatures'
+    ] 
 });
 
 const MissingPerson = mongoose.model('MissingPerson', MissingPersonsSchema, 'missingpersons');
