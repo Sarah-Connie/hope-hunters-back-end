@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const { app } = require('../../src/server');
 
 
-describe('missing/ route returns all documents in missingpersons collection in ascending order of date added', () => {
+describe('missing/ route returns all documents in missingpersons collection in descending order of date added', () => {
 	test("Route returns documents formatted as JSON", async () => {
 		const response = await request(app).get('/missing/');
 		expect(response.statusCode).toEqual(200);
