@@ -118,12 +118,12 @@ const seedMissingPersons = [
         fullName: 'Bethany Reading',
         photoURL: 'https://media.istockphoto.com/id/1072792764/photo/positive-living.jpg?s=1024x1024&w=is&k=20&c=BLmPOpZDkFl_p9YVJddPGuFb2IF8pfGqpWYIps6XkeU=',
         age: {
-            number: 57,
+            number: 55,
             type: 'years'
         },
         dateLastSeen: (new Date().setDate(new Date().getDate() - 665)),
         currentAge: {
-            number: 55,
+            number: 57,
             type: 'years'
         },
         areaSuspectedToBe: 'Campbelltown',
