@@ -18,7 +18,7 @@ const login = async (request, response) => {
         if (!user) {
             return response.status(400).json({error: 'Incorrect email address.'})
         // Check that supplied password matches the password stored in the database
-        } else if (encryptString(request.body.password) != user.password) {
+        } else if (request.body.password != decryptString(user.password)) {
             return response.status(400).json({error: 'Incorrect password.'})
         // Check user document contains a JWT. If not, user has not verified their email address. Send new verification link to the supplied email address.
         } else if (!user.jwt) {
