@@ -106,7 +106,8 @@ Use ```npm install``` to install all dependencies. Please note that npm has been
 **Request Headers:** NIL \
 **Successful Response Example:**
 
-![/users/login example response body](./assets/route_examples/user_login_response.png)
+![/users/login example response body for general user document with admin status](./assets/route_examples/user_login_response1.png)
+![/users/login example response body for police user document](./assets/route_examples/user_login_response2.png)
 
 
 **URL Path:** /users/login/refresh-token \
