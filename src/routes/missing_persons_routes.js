@@ -4,12 +4,12 @@ const { updateMissing } = require('../controllers/missing_update');
 const { deleteMissing } = require('../controllers/missing_delete');
 const { searchAllMissing } = require('../controllers/search_all');
 const { searchAmberAlert } = require('../controllers/missing_amber_alert');
+const { searchUsersMissing } = require('../controllers/users_search_missing');
 
 const { validateRequest } = require('../middlewares/validate_JWT');
 const { getUserStatus } = require('../middlewares/userStatus');
 
 const express = require('express');
-const { searchUsersMissing } = require('../controllers/users_search_missing');
 const missingRouter = express.Router();
 
 
