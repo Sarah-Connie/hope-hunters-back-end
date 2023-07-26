@@ -45,7 +45,7 @@ const login = async (request, response) => {
             });
         // If validations above pass, login the user and add the jwt to the response.body
         } else {
-            return response.status(200).json({message: 'Login successful.', token: user.jwt});
+            return response.status(200).json({message: 'Login successful.', token: user.jwt, police: true, admin: false});
         }
     } else {
         // Search generalusers collection with the provided email address
@@ -83,7 +83,7 @@ const login = async (request, response) => {
             });
         // If validations above pass, login the user and add the jwt to the response.body
         } else {
-            return response.status(200).json({message: 'Login successful.', token: user.jwt});
+            return response.status(200).json({message: 'Login successful.', token: user.jwt, admin: user.admin, police: false});
         }
     }
 };

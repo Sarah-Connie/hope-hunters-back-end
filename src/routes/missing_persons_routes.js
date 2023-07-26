@@ -5,6 +5,7 @@ const { deleteMissing } = require('../controllers/missing_delete');
 const { searchAllMissing } = require('../controllers/search_all');
 const { searchAmberAlert } = require('../controllers/missing_amber_alert');
 const { searchUsersMissing } = require('../controllers/users_search_missing');
+const { sortMissingName } = require('../controllers/missing_sorted_name');
 
 const { validateRequest } = require('../middlewares/validate_JWT');
 const { getUserStatus } = require('../middlewares/userStatus');
@@ -26,5 +27,7 @@ missingRouter.get('/search/:search', searchAllMissing);
 missingRouter.get('/users/search/:search', validateRequest, getUserStatus, searchUsersMissing);
 
 missingRouter.get('/amber-alerts', searchAmberAlert);
+
+missingRouter.get('/sorted/name', sortMissingName);
 
 module.exports = missingRouter;

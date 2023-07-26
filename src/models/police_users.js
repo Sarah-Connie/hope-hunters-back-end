@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+const { encryptString } = require('../helper_functions/cryptography_management');
+
 
 const PoliceUsersSchema = new mongoose.Schema({
     stationName: {
@@ -27,6 +29,13 @@ const PoliceUsersSchema = new mongoose.Schema({
     jwt: {
       type: String
     }
+});
+
+PoliceUsersSchema.pre('findOneAndUpdate', async function(next) {
+    if (this._update.password) {
+        this._update.password = await encryptString(this._update.password)
+    }
+    next();
 });
 
 const PoliceUser = mongoose.model('PoliceUser', PoliceUsersSchema);
