@@ -16,15 +16,22 @@
 
 https://trello.com/b/7NMGHoN7/full-stack-app
 
+### Installing Dependencies:
+
+Use ```npm install``` to install all dependencies. Please note that npm has been configured in this project to use the --legacy-peer-deps flag as the package mongoose-fuzzy-searching has a depreciated peer dependency; however, the package does function as intended. If install fails, please disable --legacy-peer-deps on the project before running ```npm install``` again and install mongoose-fuzzy-searching separately afterwards with: ```npm install mongoose-fuzzy-searching --legacy-peer-deps```.
+
 ### Scripts: 
 
-- Development: npm run start-prod
+**Development:**
+- Seed Development Database: npm run seed-dev
+- Development: npm run start-dev
+
+**Testing:**
+- Seed Test Database: npm run seed-test 
 - Testing: npm run start-test
 - Jest Coverage: npm run jest-coverage
-- Seed Development Database: npm run seed-dev
-- Seed Test Database: npm run seed-test 
 
-***Please note: the database must be re-seeded before tests can be run. Some fields on the schema are set to unique and will throw errors if attempting to add duplicate data in the generalusers and policeusers collections. Execute: npm run seed-test EVERY TIME before executing: npm run start-test***
+***Please note: the test database must be re-seeded before tests can be repeated. Some fields on the schema are set to unique and will throw errors if attempting to add duplicate data in the generalusers and policeusers collections. Execute: npm run seed-test EVERY TIME before executing: npm run start-test***
 
 ### Directives: 
 
@@ -99,7 +106,8 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 **Request Headers:** NIL \
 **Successful Response Example:**
 
-![/users/login example response body](./assets/route_examples/user_login_response.png)
+![/users/login example response body for general user document with admin status](./assets/route_examples/user_login_response1.png)
+![/users/login example response body for police user document](./assets/route_examples/user_login_response2.png)
 
 
 **URL Path:** /users/login/refresh-token \

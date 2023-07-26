@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+const { encryptString } = require('../helper_functions/cryptography_management');
+
 
 const GeneralUsersSchema = new mongoose.Schema({
     fullName: {
@@ -23,6 +25,13 @@ const GeneralUsersSchema = new mongoose.Schema({
     jwt: {
         type: String
     }
+});
+
+GeneralUsersSchema.pre('findOneAndUpdate', async function(next) {
+    if (this._update.password) {
+        this._update.password = await encryptString(this._update.password)
+    }
+    next();
 });
 
 const GeneralUser = mongoose.model('GeneralUser', GeneralUsersSchema);
