@@ -243,7 +243,7 @@ After:
 **URL Path:** /missing/amber-alerts \
 **Description:** Get all missingpersons documents where the field amberAlert equals true \
 **HTTP Method:** GET \
-**Authentication Type:** NILn \
+**Authentication Type:** NIL \
 **Authorisation Required:** NIL \
 **Request Body:** NIL \
 **Request Headers:** NIL \
@@ -251,3 +251,41 @@ After:
 
 ![/missing/amber-alerts example response](./assets/route_examples/amber_alert_response1.png)
 ![/missing/amber-alerts example response](./assets/route_examples/amber_alert_response2.png)
+
+
+**URL Path:** /missing/sorted/:option where :option must be fullName, lastSeen, ageYoungest, ageOldest, currentAge, dateLastSeenNewest or dateLastSeenOldest \
+**Description:** Get all missingpersons documents and sort them per user request. Uses a switch case to match the request parameter to a case in the controller that will return the documents sorted by the corresponding field: fullName (A - Z), locationLastSeen (A - Z), age (ascending), age (descending), dateLastSeen (descending) or dateLastSeen (ascending) \
+**HTTP Method:** GET \
+**Authentication Type:** NIL \
+**Authorisation Required:** NIL \
+**Request Body:** NIL \
+**Request Headers:** NIL \
+**Successful Response Example:**
+
+*:option: fullName:*
+![/missing/sorted/fullName url example](./assets/route_examples/sorted_fullName_url.png)
+![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullname_response_video.mov)
+
+*:option: lastSeen:*
+![/missing/sorted/lastSeen url example](./assets/route_examples)
+![/missing/sorted/lastSeen response on success example](./assets/route_examples)
+
+*:option: ageYoungest:*
+![/missing/sorted/ageYoungest url example](./assets/route_examples)
+![/missing/sorted/ageYoungest response on success example](./assets/route_examples)
+
+*:option: ageOldest:*
+![/missing/sorted/ageOldest url example](./assets/route_examples)
+![/missing/sorted/ageOldest response on success example](./assets/route_examples)
+
+*:option: currentAge:*
+![/missing/sorted/currentAge url example](./assets/route_examples)
+![/missing/sorted/currentAge response on success example](./assets/route_examples)
+
+*:option: dateLastSeenNewest:*
+![/missing/sorted/dateLastSeenNewest url example](./assets/route_examples)
+![/missing/sorted/dateLastSeenNewest response on success example](./assets/route_examples)
+
+*:option: dateLastSeenOldest:*
+![/missing/sorted/dateLastSeenOldest url example](./assets/route_examples)
+![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples)
