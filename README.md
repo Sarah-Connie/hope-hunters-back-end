@@ -262,30 +262,31 @@ After:
 **Request Headers:** NIL \
 **Successful Response Example:**
 
-*:option: fullName:*
+*option: fullName*
 ![/missing/sorted/fullName url example](./assets/route_examples/sorted_fullName_url.png)
-![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullname_response_video.mov)
 
-*:option: lastSeen:*
+[![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_full_response_screenshot.png)](./assets/route_examples/sorted_fullname_response_video.mov)
+
+*option: lastSeen*
 ![/missing/sorted/lastSeen url example](./assets/route_examples)
 ![/missing/sorted/lastSeen response on success example](./assets/route_examples)
 
-*:option: ageYoungest:*
+*option: ageYoungest*
 ![/missing/sorted/ageYoungest url example](./assets/route_examples)
 ![/missing/sorted/ageYoungest response on success example](./assets/route_examples)
 
-*:option: ageOldest:*
+*option: ageOldest*
 ![/missing/sorted/ageOldest url example](./assets/route_examples)
 ![/missing/sorted/ageOldest response on success example](./assets/route_examples)
 
-*:option: currentAge:*
+*option: currentAge*
 ![/missing/sorted/currentAge url example](./assets/route_examples)
 ![/missing/sorted/currentAge response on success example](./assets/route_examples)
 
-*:option: dateLastSeenNewest:*
+*option: dateLastSeenNewest*
 ![/missing/sorted/dateLastSeenNewest url example](./assets/route_examples)
 ![/missing/sorted/dateLastSeenNewest response on success example](./assets/route_examples)
 
-*:option: dateLastSeenOldest:*
+*option: dateLastSeenOldest*
 ![/missing/sorted/dateLastSeenOldest url example](./assets/route_examples)
 ![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples)
