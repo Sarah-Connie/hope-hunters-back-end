@@ -264,8 +264,9 @@ After:
 
 *option: fullName*
 ![/missing/sorted/fullName url example](./assets/route_examples/sorted_fullName_url.png)
+![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullname_response_video.mov)
 
-[![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_full_response_screenshot.png)](./assets/route_examples/sorted_fullname_response_video.mov)
+<!-- [![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_full_response_screenshot.png)](./assets/route_examples/sorted_fullname_response_video.mov) -->
 
 *option: lastSeen*
 ![/missing/sorted/lastSeen url example](./assets/route_examples)
