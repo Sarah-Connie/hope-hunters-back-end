@@ -106,8 +106,8 @@ Use ```npm install``` to install all dependencies. Please note that npm has been
 **Request Headers:** NIL \
 **Successful Response Example:**
 
-![/users/login example response body for general user document with admin status](./assets/route_examples/user_login_response1.png)
-![/users/login example response body for police user document](./assets/route_examples/user_login_response2.png)
+![/users/login example response body for general user document with admin status](./assets/route_examples/users_login_response1.png)
+![/users/login example response body for police user document](./assets/route_examples/users_login_response2.png)
 
 
 **URL Path:** /users/login/refresh-token \
@@ -243,7 +243,7 @@ After:
 **URL Path:** /missing/amber-alerts \
 **Description:** Get all missingpersons documents where the field amberAlert equals true \
 **HTTP Method:** GET \
-**Authentication Type:** NILn \
+**Authentication Type:** NIL \
 **Authorisation Required:** NIL \
 **Request Body:** NIL \
 **Request Headers:** NIL \
@@ -251,3 +251,83 @@ After:
 
 ![/missing/amber-alerts example response](./assets/route_examples/amber_alert_response1.png)
 ![/missing/amber-alerts example response](./assets/route_examples/amber_alert_response2.png)
+
+
+**URL Path:** /missing/sorted/:option where :option must be fullName, lastSeen, ageYoungest, ageOldest, currentAge, dateLastSeenNewest or dateLastSeenOldest \
+**Description:** Get all missingpersons documents and sort them per user request. Uses a switch case to match the request parameter to a case in the controller that will return the documents sorted by the corresponding field: fullName (A - Z), locationLastSeen (A - Z), age (ascending), age (descending), dateLastSeen (descending) or dateLastSeen (ascending) \
+**HTTP Method:** GET \
+**Authentication Type:** NIL \
+**Authorisation Required:** NIL \
+**Request Body:** NIL \
+**Request Headers:** NIL \
+**Successful Response Example:**
+
+*option: fullName*
+![/missing/sorted/fullName url example](./assets/route_examples/sorted_fullName_url.png)
+![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullName_url7.png)
+![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullName_url6.png)
+![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullName_url5.png)
+![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullName_url4.png)
+![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullName_url3.png)
+![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullName_url2.png)
+![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullName_url.png)
+
+
+*option: lastSeen*
+![/missing/sorted/lastSeen url example](./assets/route_examples/sorted_lastSeen_url.png)
+![/missing/sorted/lastSeen response on success example](./assets/route_examples/sorted_lastSeen_response.png)
+![/missing/sorted/lastSeen response on success example](./assets/route_examples/sorted_lastSeen_response2.png)
+![/missing/sorted/lastSeen response on success example](./assets/route_examples/sorted_lastSeen_response3.png)
+![/missing/sorted/lastSeen response on success example](./assets/route_examples/sorted_lastSeen_response4.png)
+![/missing/sorted/lastSeen response on success example](./assets/route_examples/sorted_lastSeen_response5.png)
+![/missing/sorted/lastSeen response on success example](./assets/route_examples/sorted_lastSeen_response6.png)
+
+
+*option: ageYoungest*
+![/missing/sorted/ageYoungest url example](./assets/route_examples/sorted_ageYoungest_url.png)
+![/missing/sorted/ageYoungest response on success example](./assets/route_examples/sorted_ageYoungest_response.png)
+![/missing/sorted/ageYoungest response on success example](./assets/route_examples/sorted_ageYoungest_response2.png)
+![/missing/sorted/ageYoungest response on success example](./assets/route_examples/sorted_ageYoungest_response3.png)
+![/missing/sorted/ageYoungest response on success example](./assets/route_examples/sorted_ageYoungest_response4.png)
+![/missing/sorted/ageYoungest response on success example](./assets/route_examples/sorted_ageYoungest_response5.png)
+![/missing/sorted/ageYoungest response on success example](./assets/route_examples/sorted_ageYoungest_response6.png)
+
+
+*option: ageOldest*
+![/missing/sorted/ageOldest url example](./assets/route_examples/sorted_ageOldest_url.png)
+![/missing/sorted/ageOldest response on success example](./assets/route_examples/sorted_ageOldest_response.png)
+![/missing/sorted/ageOldest response on success example](./assets/route_examples/sorted_ageOldest_response2.png)
+![/missing/sorted/ageOldest response on success example](./assets/route_examples/sorted_ageOldest_response3.png)
+![/missing/sorted/ageOldest response on success example](./assets/route_examples/sorted_ageOldest_response4.png)
+![/missing/sorted/ageOldest response on success example](./assets/route_examples/sorted_ageOldest_response5.png)
+![/missing/sorted/ageOldest response on success example](./assets/route_examples/sorted_ageOldest_response6.png)
+
+
+*option: currentAge*
+![/missing/sorted/currentAge url example](./assets/route_examples/sorted_currentAge_url.png)
+![/missing/sorted/currentAge response on success example](./assets/route_examples/sorted_currentAge_response.png)
+![/missing/sorted/currentAge response on success example](./assets/route_examples/sorted_currentAge_response2.png)
+![/missing/sorted/currentAge response on success example](./assets/route_examples/sorted_currentAge_response3.png)
+![/missing/sorted/currentAge response on success example](./assets/route_examples/sorted_currentAge_response4.png)
+![/missing/sorted/currentAge response on success example](./assets/route_examples/sorted_currentAge_response5.png)
+![/missing/sorted/currentAge response on success example](./assets/route_examples/sorted_currentAge_response6.png)
+
+
+*option: dateLastSeenNewest*
+![/missing/sorted/dateLastSeenNewest url example](./assets/route_examples/sorted_DLSN_url.png)
+![/missing/sorted/dateLastSeenNewest response on success example](./assets/route_examples/sorted_DLSN_response.png)
+![/missing/sorted/dateLastSeenNewest response on success example](./assets/route_examples/sorted_DLSN_response2.png)
+![/missing/sorted/dateLastSeenNewest response on success example](./assets/route_examples/sorted_DLSN_response3.png)
+![/missing/sorted/dateLastSeenNewest response on success example](./assets/route_examples/sorted_DLSN_response4.png)
+![/missing/sorted/dateLastSeenNewest response on success example](./assets/route_examples/sorted_DLSN_response5.png)
+![/missing/sorted/dateLastSeenNewest response on success example](./assets/route_examples/sorted_DLSN_response6.png)
+
+
+*option: dateLastSeenOldest*
+![/missing/sorted/dateLastSeenOldest url example](./assets/route_examples/sorted_DLSO_url.png)
+![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples/sorted_DLSO_response.png)
+![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples/sorted_DLSO_response2.png)
+![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples/sorted_DLSO_response3.png)
+![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples/sorted_DLSO_response4.png)
+![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples/sorted_DLSO_response5.png)
+![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples/sorted_DLSO_response6.png)
