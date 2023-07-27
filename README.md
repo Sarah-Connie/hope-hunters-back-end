@@ -264,32 +264,70 @@ After:
 
 *option: fullName*
 ![/missing/sorted/fullName url example](./assets/route_examples/sorted_fullName_url.png)
-<!-- [![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_full_response_screenshot.png)](./assets/route_examples/sorted_fullname_response_video.mp4) -->
+![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullName_url7.png)
+![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullName_url6.png)
+![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullName_url5.png)
+![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullName_url4.png)
+![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullName_url3.png)
+![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullName_url2.png)
+![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullName_url.png)
 
-![/missing/sorted/fullName response on success example](./assets/route_examples/sorted_fullname_response_video.mp4)
-
-<video src="./assets/route_examples/sorted_fullname_response_video.mp4"></video>
 
 *option: lastSeen*
-![/missing/sorted/lastSeen url example](./assets/route_examples)
-![/missing/sorted/lastSeen response on success example](./assets/route_examples)
+![/missing/sorted/lastSeen url example](./assets/route_examples/sorted_lastSeen_url.png)
+![/missing/sorted/lastSeen response on success example](./assets/route_examples/sorted_lastSeen_response.png)
+![/missing/sorted/lastSeen response on success example](./assets/route_examples/sorted_lastSeen_response2.png)
+![/missing/sorted/lastSeen response on success example](./assets/route_examples/sorted_lastSeen_response3.png)
+![/missing/sorted/lastSeen response on success example](./assets/route_examples/sorted_lastSeen_response4.png)
+![/missing/sorted/lastSeen response on success example](./assets/route_examples/sorted_lastSeen_response5.png)
+![/missing/sorted/lastSeen response on success example](./assets/route_examples/sorted_lastSeen_response6.png)
+
 
 *option: ageYoungest*
-![/missing/sorted/ageYoungest url example](./assets/route_examples)
-![/missing/sorted/ageYoungest response on success example](./assets/route_examples)
+![/missing/sorted/ageYoungest url example](./assets/route_examples/sorted_ageYoungest_url.png)
+![/missing/sorted/ageYoungest response on success example](./assets/route_examples/sorted_ageYoungest_response.png)
+![/missing/sorted/ageYoungest response on success example](./assets/route_examples/sorted_ageYoungest_response2.png)
+![/missing/sorted/ageYoungest response on success example](./assets/route_examples/sorted_ageYoungest_response3.png)
+![/missing/sorted/ageYoungest response on success example](./assets/route_examples/sorted_ageYoungest_response4.png)
+![/missing/sorted/ageYoungest response on success example](./assets/route_examples/sorted_ageYoungest_response5.png)
+![/missing/sorted/ageYoungest response on success example](./assets/route_examples/sorted_ageYoungest_response6.png)
+
 
 *option: ageOldest*
-![/missing/sorted/ageOldest url example](./assets/route_examples)
-![/missing/sorted/ageOldest response on success example](./assets/route_examples)
+![/missing/sorted/ageOldest url example](./assets/route_examples/sorted_ageOldest_url.png)
+![/missing/sorted/ageOldest response on success example](./assets/route_examples/sorted_ageOldest_response.png)
+![/missing/sorted/ageOldest response on success example](./assets/route_examples/sorted_ageOldest_response2.png)
+![/missing/sorted/ageOldest response on success example](./assets/route_examples/sorted_ageOldest_response3.png)
+![/missing/sorted/ageOldest response on success example](./assets/route_examples/sorted_ageOldest_response4.png)
+![/missing/sorted/ageOldest response on success example](./assets/route_examples/sorted_ageOldest_response5.png)
+![/missing/sorted/ageOldest response on success example](./assets/route_examples/sorted_ageOldest_response6.png)
+
 
 *option: currentAge*
-![/missing/sorted/currentAge url example](./assets/route_examples)
-![/missing/sorted/currentAge response on success example](./assets/route_examples)
+![/missing/sorted/currentAge url example](./assets/route_examples/sorted_currentAge_url.png)
+![/missing/sorted/currentAge response on success example](./assets/route_examples/sorted_currentAge_response.png)
+![/missing/sorted/currentAge response on success example](./assets/route_examples/sorted_currentAge_response2.png)
+![/missing/sorted/currentAge response on success example](./assets/route_examples/sorted_currentAge_response3.png)
+![/missing/sorted/currentAge response on success example](./assets/route_examples/sorted_currentAge_response4.png)
+![/missing/sorted/currentAge response on success example](./assets/route_examples/sorted_currentAge_response5.png)
+![/missing/sorted/currentAge response on success example](./assets/route_examples/sorted_currentAge_response6.png)
+
 
 *option: dateLastSeenNewest*
-![/missing/sorted/dateLastSeenNewest url example](./assets/route_examples)
-![/missing/sorted/dateLastSeenNewest response on success example](./assets/route_examples)
+![/missing/sorted/dateLastSeenNewest url example](./assets/route_examples/sorted_DLSN_url.png)
+![/missing/sorted/dateLastSeenNewest response on success example](./assets/route_examples/sorted_DLSN_response.png)
+![/missing/sorted/dateLastSeenNewest response on success example](./assets/route_examples/sorted_DLSN_response2.png)
+![/missing/sorted/dateLastSeenNewest response on success example](./assets/route_examples/sorted_DLSN_response3.png)
+![/missing/sorted/dateLastSeenNewest response on success example](./assets/route_examples/sorted_DLSN_response4.png)
+![/missing/sorted/dateLastSeenNewest response on success example](./assets/route_examples/sorted_DLSN_response5.png)
+![/missing/sorted/dateLastSeenNewest response on success example](./assets/route_examples/sorted_DLSN_response6.png)
+
 
 *option: dateLastSeenOldest*
-![/missing/sorted/dateLastSeenOldest url example](./assets/route_examples)
-![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples)
+![/missing/sorted/dateLastSeenOldest url example](./assets/route_examples/sorted_DLSO_url.png)
+![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples/sorted_DLSO_response.png)
+![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples/sorted_DLSO_response2.png)
+![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples/sorted_DLSO_response3.png)
+![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples/sorted_DLSO_response4.png)
+![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples/sorted_DLSO_response5.png)
+![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples/sorted_DLSO_response6.png)
