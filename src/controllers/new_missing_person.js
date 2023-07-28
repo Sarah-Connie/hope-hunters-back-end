@@ -38,7 +38,9 @@ const addMissingPerson = async (request, response) => {
         amberAlert: request.body.amberAlert,
         dateAdded: request.body.dateAdded,
         // Attach the user to the document with the _id obtained in the getUserStatus middleware
-        addedBy: request.userID
+        addedBy: request.userID,
+        // Attach the police district to the document with the details obtained in the getUserStatus middleware
+        policeDistrict: request.district
     });
 
     
