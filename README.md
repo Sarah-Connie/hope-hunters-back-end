@@ -193,8 +193,14 @@ After:
 **Request Headers:** authorization: Bearer ${JSON Web Token} \
 **Successful Response Example:**
 
+*User Type: General*
 ![/missing/new example response on success](./assets/route_examples/missing_new_response1.png)
 ![/missing/new example response on success](./assets/route_examples/missing_new_response2.png)
+
+
+*User Type: Police*
+![/missing/new example response on success](./assets/route_examples/missing_new_response3.png)
+![/missing/new example response on success](./assets/route_examples/missing_new_response4.png)
 
 
 **URL Path:** /missing/update/:id where :id is the _id of the document to be altered \
