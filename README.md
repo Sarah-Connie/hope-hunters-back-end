@@ -231,7 +231,7 @@ After:
 ![/missing/delete/:id example response on success](./assets/route_examples/missing_delete_response.png)
 
 
-**URL Path:** /missing/search/:search where :search is a parameter to match a fuzzy search query string on the fields: fullName, areaSuspectedToBe, hairColour, eyeColour, complexion, distinctiveFeatures, age and currentAge \
+**URL Path:** /missing/search/:search where :search is a parameter to match a fuzzy search query string on the fields: fullName, areaSuspectedToBe, hairColour, eyeColour, complexion, distinctiveFeatures, age and currentAge (one number only of length less than four digits) and year on the dateLastSeen field (one number only of4 digit length) \
 **Description:** Allow any user to perform a fuzzy search for any missingpersons document/s \
 **HTTP Method:** GET \
 **Authentication Type:** NIL \
