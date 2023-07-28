@@ -154,6 +154,19 @@ After:
 ![/users/delete example response on success](./assets/route_examples/users_delete.png)
 
 
+**URL Path:** /users/missing/all \
+**Description:** All a logged in, verified user to get all missingpersons documents that they own \
+**HTTP Method:** GET \
+**Authentication Type:** JSON Web Token \
+**Authorisation Required:** Verifiable JSON Web Token must match verified gereraluser or policeuser document \
+**Request Body:** NIL \
+**Request Headers:** authorization: Bearer ${JSON Web Token} \
+**Successful Response Example:**
+
+![/users/missing/all example response on success](./assets/route_examples/users_missing_all_response1.png)
+![/users/missing/all example response on success](./assets/route_examples/users_missing_all_response2.png)
+
+
 **URL Path:** /missing/ \
 **Description:** Allow anyone to get all documents in the missingpersons collection, sorted in descending order by dateAdded (newest to oldest) \
 **HTTP Method:** GET \
