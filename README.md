@@ -154,6 +154,19 @@ After:
 ![/users/delete example response on success](./assets/route_examples/users_delete.png)
 
 
+**URL Path:** /users/missing/all \
+**Description:** All a logged in, verified user to get all missingpersons documents that they own \
+**HTTP Method:** GET \
+**Authentication Type:** JSON Web Token \
+**Authorisation Required:** Verifiable JSON Web Token must match verified gereraluser or policeuser document \
+**Request Body:** NIL \
+**Request Headers:** authorization: Bearer ${JSON Web Token} \
+**Successful Response Example:**
+
+![/users/missing/all example response on success](./assets/route_examples/users_missing_all_response1.png)
+![/users/missing/all example response on success](./assets/route_examples/users_missing_all_response2.png)
+
+
 **URL Path:** /missing/ \
 **Description:** Allow anyone to get all documents in the missingpersons collection, sorted in descending order by dateAdded (newest to oldest) \
 **HTTP Method:** GET \
@@ -180,8 +193,14 @@ After:
 **Request Headers:** authorization: Bearer ${JSON Web Token} \
 **Successful Response Example:**
 
+*User Type: General*
 ![/missing/new example response on success](./assets/route_examples/missing_new_response1.png)
 ![/missing/new example response on success](./assets/route_examples/missing_new_response2.png)
+
+
+*User Type: Police*
+![/missing/new example response on success](./assets/route_examples/missing_new_response3.png)
+![/missing/new example response on success](./assets/route_examples/missing_new_response4.png)
 
 
 **URL Path:** /missing/update/:id where :id is the _id of the document to be altered \
@@ -212,7 +231,7 @@ After:
 ![/missing/delete/:id example response on success](./assets/route_examples/missing_delete_response.png)
 
 
-**URL Path:** /missing/search/:search where :search is a parameter to match a fuzzy search query string on the fields: fullName, areaSuspectedToBe, hairColour, eyeColour, complexion, distinctiveFeatures, age and currentAge \
+**URL Path:** /missing/search/:search where :search is a parameter to match a fuzzy search query string on the fields: fullName, areaSuspectedToBe, hairColour, eyeColour, complexion, distinctiveFeatures, age and currentAge (one number only of length less than four digits) and year on the dateLastSeen field (one number only of4 digit length) \
 **Description:** Allow any user to perform a fuzzy search for any missingpersons document/s \
 **HTTP Method:** GET \
 **Authentication Type:** NIL \
@@ -224,6 +243,10 @@ After:
 ![/missing/search/:search example url](./assets/route_examples/search_all_url.png)
 ![/missing/search/:search example response](./assets/route_examples/search_all_response1.png)
 ![/missing/search/:search example response](./assets/route_examples/search_all_response2.png)
+
+![/missing/search/:search example url](./assets/route_examples/search_all_url2.png)
+![/missing/search/:search example response](./assets/route_examples/search_all_response3.png)
+![/missing/search/:search example response](./assets/route_examples/search_all_response4.png)
 
 
 **URL Path:** /missing/users/search/:search where :search is a parameter to match a fuzzy search query string on the fields: fullName, areaSuspectedToBe, hairColour, eyeColour, complexion, distinctiveFeatures, age and currentAge \
