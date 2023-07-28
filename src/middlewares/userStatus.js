@@ -14,6 +14,7 @@ const getUserStatus = (request, response, next) => {
                                     request.userID = user._id;
                                     request.police = true;
                                     request.admin = false;
+                                    request.district = user.policeDistrict
                                     next();
                                 })
                                 .catch(error => { 
