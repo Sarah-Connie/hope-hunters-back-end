@@ -81,6 +81,9 @@ const MissingPersonsSchema = new mongoose.Schema({
     },
     addedBy:
         [{type: mongoose.Types.ObjectId, ref: 'GeneralUser'}, {type: mongoose.Types.ObjectId, ref: 'PoliceUser'}],
+    policeDistrict: {
+        type: String
+    },
     dateAdded: {
         type: Date,
         default: Date.now()
@@ -99,7 +102,8 @@ MissingPersonsSchema.plugin(mongooseFuzzySearching, {
         'hairColour',
         'eyeColour',
         'complexion',
-        'distinctiveFeatures'
+        'distinctiveFeatures',
+        'policeDistrict'
     ] 
 });
 
