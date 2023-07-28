@@ -27,6 +27,15 @@ describe('missing/search/:search route returns matching documents in missingpers
         expect(response.body[0].currentAge).toMatchObject(expect.objectContaining([{number: 57, type: 'years'}]));
         expect(response.body[0]).not.toHaveProperty('token');
 	});
+    test("Route returns matching documents. Search parameter 2021 should return one document with the year of the dateLastSeen field being 2021", async () => {
+		const response = await request(app).get('/missing/search/2021');
+        const dateExpectedRaw = (new Date().setDate(new Date().getDate() - 665));
+        let dateReceived = (new Date(response.body[0].dateLastSeen)).toISOString().split('T')[0]
+        let dateExpected = (new Date(dateExpectedRaw)).toISOString().split('T')[0]
+        expect(response.body[0]).toHaveProperty('dateLastSeen');
+        expect(dateReceived).toBe(dateExpected);
+        expect(response.body[0]).not.toHaveProperty('error');
+	});
     test("Route returns objects sorted in descending order for the dateAdded field", async () => {
 		const response = await request(app).get('/missing/search/male');
         const oldest = new Date(response.body[1].dateAdded).getTime()
