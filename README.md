@@ -244,6 +244,10 @@ After:
 ![/missing/search/:search example response](./assets/route_examples/search_all_response1.png)
 ![/missing/search/:search example response](./assets/route_examples/search_all_response2.png)
 
+![/missing/search/:search example url](./assets/route_examples/search_all_url2.png)
+![/missing/search/:search example response](./assets/route_examples/search_all_response3.png)
+![/missing/search/:search example response](./assets/route_examples/search_all_response4.png)
+
 
 **URL Path:** /missing/users/search/:search where :search is a parameter to match a fuzzy search query string on the fields: fullName, areaSuspectedToBe, hairColour, eyeColour, complexion, distinctiveFeatures, age and currentAge \
 **Description:** Allow an logged in, verified user to perform a fuzzy search for missingpersons document/s that they own \
