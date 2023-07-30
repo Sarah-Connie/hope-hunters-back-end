@@ -38,7 +38,7 @@ Use ```npm install``` to install all dependencies. Please note that npm has been
 - If setting up a MongoDB local development database for the purpose of marking this assessment the database must be named: hope-hunters-dev
 - If setting up MongoDB local testing database for the purpose of marking this assessment the database must be named: hope-hunters-testdb
 
-- Node is configured to run on port 3000 (default). If you are unable to use this port, please change the POST variable on line 8 of the server.js file at the root of this directory. 
+- Node is configured to run on port 5001. If you are unable to use this port, please change the POST variable on line 10 of the server.js file at the root of this directory. 
 
 ### Endpoints:
 
