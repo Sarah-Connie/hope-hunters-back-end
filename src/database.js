@@ -17,7 +17,7 @@ const mongoose = require('mongoose');
 // the appropriate url for the database for the environment
 async function databaseConnector(databaseURL) {
     try {
-        await mongoose.connect(databaseURL)
+        await mongoose.connect(databaseURL, {useNewUrlParser: true, useUnifiedTopology: true})
     } catch (error) {
         console.log(error);
     }
