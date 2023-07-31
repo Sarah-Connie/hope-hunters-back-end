@@ -36,8 +36,8 @@ describe('missing/search/:search route returns matching documents in missingpers
         expect(dateReceived).toBe(dateExpected);
         expect(response.body[0]).not.toHaveProperty('error');
 	});
-    test("Route returns objects sorted in descending order for the dateAdded field", async () => {
-		const response = await request(app).get('/missing/search/male');
+    test("Route returns objects sorted in descending order for the dateLastSeen field", async () => {
+		const response = await request(app).get('/missing/search/2023');
         const oldest = new Date(response.body[1].dateAdded).getTime()
         const newest = new Date(response.body[0].dateAdded).getTime()
         expect(newest).toBeGreaterThanOrEqual(oldest);

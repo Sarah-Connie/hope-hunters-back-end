@@ -40,8 +40,8 @@ describe('users/missing/all route returns all documents in missingpersons collec
     test("Route returns an empty array if no matching documents exist", async () => {
 		const response = await request(app)
                                 .get('/users/missing/all')
-                                // Token belongs to police user Sawtell Police Station
-                                .set({'authorization': 'Bearer 18b4ec91883a39a06015c7184e0b51d79240ffc944639f525563c0e42a3eedfbb946c614c58c20c2373f7f334c2d9233178559778e103d219059b52665e2310e6b2760a8d34aee96cac4b5bc88b7ca5a30df1889b634cde6fd898fd2bbbb4775107f91b9b4df4debd7864f702c0f1875c8af0a142bb89be3aee48d86042d88d19c85710e72de62db8f23b5f41e2c38baed70d51574b549c4e6ce70df39e12916'});
+                                // Token belongs to verified user Steve M
+                                .set({'authorization': 'Bearer 18b4ec91883a39a06015c7184e0b51d79240ffc944639f525563c0e42a3eedfbb946c614c58c20c2373f7f334c2d92337326295595780f6f4478c0a3c1c78b43f4015f3f02995b8832310a0836ed15a46b7a63ab6c803bc3b4993d3f871e40eeffb6e1e44d956d698d02872b2e5a746181881e7bc8e353c3e5a520daf26876fdc56822960d8a62bff6ae4769a88d36a1'});
         expect(response.statusCode).toEqual(200);
         expect(response.body).toStrictEqual([]);
 	});

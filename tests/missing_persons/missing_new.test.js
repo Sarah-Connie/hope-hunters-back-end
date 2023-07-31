@@ -124,6 +124,7 @@ describe('missing/new allows a verified user to add a new document to the missin
                                     distinctiveFeatures: "none",
                                     amberAlert: false
                                 })
+                                // Bearer token for verified user Peter R
                                 .set({'authorization': 'Bearer 18b4ec91883a39a06015c7184e0b51d79240ffc944639f525563c0e42a3eedfbb946c614c58c20c2373f7f334c2d9233a24c502580595c9f90d6fed58bb0ed616e551b636f83285f6425424ead50b0f63dd935462363664fc8e03c2bea82c7549f0247c573c89b0ea894dfe2b8574861beaf4c32a7455f28f7f2ab65fcd908ecac4585634ca894ea3b4c62b605d6b90d'});
         expect(response.body).toHaveProperty('fullName');
         expect(response.body.fullName).toBe('Duncan W');
