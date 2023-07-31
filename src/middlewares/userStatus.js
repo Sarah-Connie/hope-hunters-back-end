@@ -24,7 +24,7 @@ const getUserStatus = (request, response, next) => {
         // Else, search in generalusers collection
         } else {
             // Search for user document
-            GeneralUser.findOneAndUpdate({email: request.user})
+            GeneralUser.findOne({email: request.user})
                             .then(user => {
                                 // If the user document was found, attach the user _id, police status and admin status to the request
                                 request.userID = user._id;

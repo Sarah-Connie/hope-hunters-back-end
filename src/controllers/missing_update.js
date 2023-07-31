@@ -12,7 +12,7 @@ const updateMissing = async (request, response) => {
                         })
 
     // Check that the user is a police or admin user, or is the owner of the document
-    if (request.police === true || request.admin === true || request._id === missing._id) {
+    if (request.police === true || request.admin === true || missing.addedBy[0].equals(request.userID)) {
         // If they are, update the document with the corresponding fields from the request.body
         let updateMissingPerson = await MissingPerson.findOneAndUpdate({_id: request.params.id}, request.body, {new: true})
                             .catch(error => { 
