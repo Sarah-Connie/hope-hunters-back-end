@@ -45,7 +45,7 @@ const searchUsersMissing = async (request, response) => {
                                     .find({$or: [{'dateLastSeen': {$gte: dateStart, $lte: dateMax}}]})
                                     .sort('-dateAdded')
                                     .catch(error => {
-                                        return response.status(404).json({error: 'Unable to access general users documents.'})});
+                                        return response.status(404).json({error: 'Unable to access missing persons documents.'})});
         // Respond with the documents
         return response.status(200).send(searchMissing) 
     // Else, perform a fuzzy search on the fullName, areaSuspectedToBe, hairColour, eyeColour, complexion, and distinctiveFeatures fields

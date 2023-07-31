@@ -16,7 +16,7 @@ const searchAllMissing = async (request, response) => {
                                     .find({$or: [{'age.number': queryNumber}, {'currentAge.number': queryNumber}]})
                                     .sort('-dateAdded')
                                     .catch(error => {
-                                        return response.status(404).json({error: 'Unable to access general users documents.'})});
+                                        return response.status(404).json({error: 'Unable to access missing persons documents.'})});
         // Respond with the documents
         return response.status(200).send(searchMissing) 
     // Determine if the search parameter can be a number and if it is 4 characters long
@@ -45,7 +45,7 @@ const searchAllMissing = async (request, response) => {
                                     .find({$or: [{'dateLastSeen': {$gte: dateStart, $lte: dateMax}}]})
                                     .sort('-dateAdded')
                                     .catch(error => {
-                                        return response.status(404).json({error: 'Unable to access general users documents.'})});
+                                        return response.status(404).json({error: 'Unable to access missing persons documents.'})});
         // Respond with the documents
         return response.status(200).send(searchMissing) 
     // Else, perform a fuzzy search on the fullName, areaSuspectedToBe, hairColour, eyeColour, complexion, and distinctiveFeatures fields
@@ -54,7 +54,7 @@ const searchAllMissing = async (request, response) => {
         let searchMissing = await MissingPerson
                                     .fuzzySearch({query: request.params.search, minSize: 3})
                                     .catch(error => {
-                                        return response.status(404).json({error: 'Unable to access general users documents.'})});
+                                        return response.status(404).json({error: 'Unable to access missing persons documents.'})});
         // Respond with the documents
         return response.status(200).send(searchMissing) 
     }
