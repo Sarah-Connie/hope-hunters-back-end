@@ -12,7 +12,7 @@ const deleteMissing = async (request, response) => {
                         })
 
     // Check that the user is a police or admin user, or is the owner of the document
-    if (request.police === true || request.admin === true || request._id === missing._id) {
+    if (request.police === true || request.admin === true || missing.addedBy[0].equals(request.userID)) {
         // If they are, permanently delete the document
         let deleteMissingPerson = await MissingPerson.findOneAndDelete({_id: request.params.id})
                             .catch(error => { 
