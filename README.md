@@ -360,9 +360,3 @@ After:
 ![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples/sorted_DLSO_response4.png)
 ![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples/sorted_DLSO_response5.png)
 ![/missing/sorted/dataLastSeenOldest response on success example](./assets/route_examples/sorted_DLSO_response6.png)
-
-
-### Comparison to Plan in Part A
-
-The content of Part A can be found in this repository: https://github.com/Sarah-Connie/T3A2-A
-
