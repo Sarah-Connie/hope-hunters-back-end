@@ -10,7 +10,7 @@ const sortMissing = async (request, response) => {
                                     .find({})
                                     .sort('fullName')
                                     .catch(error => {
-                                        return response.status(404).json({error: 'Unable to access general users documents.'})});
+                                        return response.status(404).json({error: 'Unable to access missing persons documents.'})});
             // Respond with the documents
             return response.status(200).send(missingFullName);
 
@@ -20,7 +20,7 @@ const sortMissing = async (request, response) => {
                                     .find({})
                                     .sort('locationLastSeen.city')
                                     .catch(error => {
-                                        return response.status(404).json({error: 'Unable to access general users documents.'})});
+                                        return response.status(404).json({error: 'Unable to access missing persons documents.'})});
             // Respond with the documents
             return response.status(200).send(missingLocationLastSeen);
 
@@ -31,7 +31,7 @@ const sortMissing = async (request, response) => {
                                     .sort('age.type')
                                     .sort('age.number')
                                     .catch(error => {
-                                        return response.status(404).json({error: 'Unable to access general users documents.'})});
+                                        return response.status(404).json({error: 'Unable to access missing persons documents.'})});
             // Respond with the documents
             return response.status(200).send(missingAgeYoungest);
 
@@ -42,7 +42,7 @@ const sortMissing = async (request, response) => {
                                     .sort('-age.type')
                                     .sort('-age.number')
                                     .catch(error => {
-                                        return response.status(404).json({error: 'Unable to access general users documents.'})});
+                                        return response.status(404).json({error: 'Unable to access missing persons documents.'})});
             // Respond with the documents
             return response.status(200).send(missingAgeOldest);
 
@@ -53,7 +53,7 @@ const sortMissing = async (request, response) => {
                                     .sort('currentAge.type')
                                     .sort('currentAge.number')
                                     .catch(error => {
-                                        return response.status(404).json({error: 'Unable to access general users documents.'})});
+                                        return response.status(404).json({error: 'Unable to access missing persons documents.'})});
             // Respond with the documents
             return response.status(200).send(missingCurrentAge);
 
@@ -63,7 +63,7 @@ const sortMissing = async (request, response) => {
                                     .find({})
                                     .sort('-dateLastSeen')
                                     .catch(error => {
-                                        return response.status(404).json({error: 'Unable to access general users documents.'})});
+                                        return response.status(404).json({error: 'Unable to access missing persons documents.'})});
             // Respond with the documents
             return response.status(200).send(missingDateLastSeenNewest);
 
@@ -73,7 +73,7 @@ const sortMissing = async (request, response) => {
                                     .find({})
                                     .sort('dateLastSeen')
                                     .catch(error => {
-                                        return response.status(404).json({error: 'Unable to access general users documents.'})});
+                                        return response.status(404).json({error: 'Unable to access missing persons documents.'})});
             // Respond with the documents
             return response.status(200).send(missingDateLastSeenOldest);
     }     

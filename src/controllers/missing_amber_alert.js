@@ -10,7 +10,7 @@ const searchAmberAlert = async (request, response) => {
                                 .find({amberAlert: true})
                                 .sort('-dateAdded')
                                 .catch(error => {
-                                    return response.status(404).json({error: 'Unable to access general users documents.'})});
+                                    return response.status(404).json({error: 'Unable to access missing persons documents.'})});
     // Respond with the documents
     return response.status(200).send(amberAlerts) 
 }

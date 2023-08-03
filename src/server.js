@@ -79,6 +79,12 @@ app.get("/databaseHealth", (request, response) => {
 const usersRouter = require('./routes/users_routes');
 const missingRouter = require('./routes/missing_persons_routes');
 
+app.get("/", (request, response) => {
+	response.json({
+		message: 'Welcome to the Hope Helpers API. Please see our docs for details: https://github.com/Sarah-Connie/hope-hunters-back-end'
+	});
+});
+
 app.use("/users", usersRouter);
 app.use("/missing", missingRouter);
 

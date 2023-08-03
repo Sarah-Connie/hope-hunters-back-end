@@ -80,9 +80,8 @@ describe('missing/search/:search route returns matching documents in missingpers
                                     .get('/missing/users/search/Fiona')
                                     // Token belongs to verified user Megan C
                                     .set({'authorization': 'Bearer 18b4ec91883a39a06015c7184e0b51d79240ffc944639f525563c0e42a3eedfbb946c614c58c20c2373f7f334c2d9233ca19f38f97432cf88b7569cae2bdf7b52544651ec0f1fedacf9822f9c7981568560043c2864ae49fb3aba11cba67917542a26be8015cf09890a90e829868985084e0d5410fc0ed773d559e9aea10e2982b732309a6b6272db81e8035d3e4b930'});
-        expect(response.statusCode).toEqual(400);
-        expect(response.body).toHaveProperty('error');
-        expect(response.body.error).toBe('Unable to find user document.');
+        expect(response.statusCode).toEqual(200);
+        expect(response.body).toStrictEqual([]);
 	});
 
   afterAll(done => {

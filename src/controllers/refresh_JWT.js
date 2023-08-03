@@ -33,7 +33,7 @@ const refreshJWT = async (request, response) => {
             // // Otherwise, try to find the user document by querying the police users collection with the old token
             let updatePoliceToken = await PoliceUser.findOneAndUpdate({email: decodedJWT.email}, {jwt: newToken}, {new: true}) 
                                             .catch(error => { 
-                                                return response.status(401).json({error:'Unable to update JWT in user document.'});
+                                                return response.status(400).json({error:'Unable to update JWT in user document.'});
                                             })
             if (updatePoliceToken) {
                 // If JWT was successfully updated on a document in the police users collection return the new JWT
@@ -43,7 +43,7 @@ const refreshJWT = async (request, response) => {
             // Try to find the user document by querying the general users collection with the old token
             let updateGeneralToken = await GeneralUser.findOneAndUpdate({email: decodedJWT.email}, {jwt: newToken}, {new: true}) 
                                             .catch(error => { 
-                                                return response.status(401).json({error:'Unable to update JWT in user document.'});
+                                                return response.status(400).json({error:'Unable to update JWT in user document.'});
                                             })
             if (updateGeneralToken) {
                 // If JWT was successfully updated on a document in the general users collection return the new JWT
@@ -54,30 +54,6 @@ const refreshJWT = async (request, response) => {
                 } 
         }
     });
-    
-    
-    // // Try to find the user document by querying the general users collection with the old token
-    // let updateGeneralToken = await GeneralUser.findOneAndUpdate({jwt: request.headers.authorization.split(" ")[1]}, {jwt: updatedToken}, {new: true}) 
-    //                             .catch(error => { 
-    //                                 return response.status(401).json({error:'Unable to update JWT in user document.'});
-    //                             })
-    // if (updateGeneralToken) {
-    //     // If JWT was successfully updated on a document in the general users collection return the new JWT
-    //     return response.status(200).json({token: updatedToken})
-    // }
-    
-    // // // Otherwise, try to find the user document by querying the police users collection with the old token
-    // let updatePoliceToken = await PoliceUser.findOneAndUpdate({jwt: request.headers.authorization.split(" ")[1]}, {jwt: updatedToken}, {new: true}) 
-    //                             .catch(error => { 
-    //                                 return response.status(401).json({error:'Unable to update JWT in user document.'});
-    //                             })
-    // if (updatePoliceToken) {
-    //     // If JWT was successfully updated on a document in the police users collection return the new JWT
-    //     return response.status(200).json({token: updatedToken})
-    // } else {
-    //     // Otherwise return an error
-    //     return response.status(400).json({error: 'Unable to update JWT'})
-    // } 
 }
 
 module.exports = { refreshJWT }

@@ -31,8 +31,7 @@ const updateUsers = async (request, response) => {
         
         // If the user document was successfully updated, return a success message
         if (updatedUser) {
-            // return response.status(200).json({message: 'User details successfully updated.'})
-            return response.status(200).json(updatedUser)
+            return response.status(200).json({message: 'User details successfully updated.'})
         } else {
             // Otherwise return an error
             return response.status(400).json({error: 'Unable to update user details.'})

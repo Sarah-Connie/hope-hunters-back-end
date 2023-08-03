@@ -8,7 +8,7 @@ const updateMissing = async (request, response) => {
     let missing = await MissingPerson.findOne({_id: request.params.id})
                         .catch(error => { 
                             // If no document found, return an error message
-                            return response.status(400).json({error:'Unable to find missing document.'});
+                            return response.status(400).json({error:'Unable to find missing person document.'});
                         })
 
     // Check that the user is a police or admin user, or is the owner of the document

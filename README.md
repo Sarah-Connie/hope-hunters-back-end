@@ -5,10 +5,11 @@
 ### Deployments:
 
 - Front End:
-- Back End:
+- Back End: http://ec2-3-26-148-33.ap-southeast-2.compute.amazonaws.com:5001/
 
 ### Repositories: 
 
+- Part A: https://github.com/Sarah-Connie/T3A2-A
 - Front End: https://github.com/Sarah-Connie/hope-hunters-front-end
 - Back End: https://github.com/Sarah-Connie/hope-hunters-back-end
 
@@ -18,8 +19,13 @@ https://trello.com/b/7NMGHoN7/full-stack-app
 
 ### Installing Dependencies:
 
-Use ```npm install``` to install all dependencies. Please note that npm has been configured in this project to use the --legacy-peer-deps flag as the package mongoose-fuzzy-searching has a depreciated peer dependency; however, the package does function as intended. If install fails, please disable --legacy-peer-deps on the project before running ```npm install``` again and install mongoose-fuzzy-searching separately afterwards with: ```npm install mongoose-fuzzy-searching --legacy-peer-deps```.
+Use ```npm install``` to install all dependencies. Please note that due to an issue with a depreciated dependency required by the package ```mongoose_fuzzy_searching``` this project installs two versions of mongoose (v7.4.1 is required for the project to run; however, v5.10.19 required to enable ```mongoose-fuzzy-search``` to install). If you have issues installing the dependencies, delete the node_modules and package-lock.json files (if created), remove ```"mongoose": "^7.4.1",``` from the package.json file so that it will install mongoose5.10.19 only and execute ```npm install``` again before executing ```npm install mongoose7.4.1``` to upgrade the mongoose to the version required for correct functionality of the api.
 
+If this does not work, please delete the node_modules and package-lock.json files (if created), remove ```"mongoose-fuzzy-searching": "^2.0.2",``` and ```"mongoose": "^5.10.19",``` from the package.json file, execute ```npm install``` again before executing ```npm install mongoose-fuzzy-searching --legacy-peer-deps```.
+
+### Secrets
+
+This project uses secrets stored in environmental variables. When cloning this project from GitHub, you will not have access to the required secrets and the project will not run. Please add a .env file at the root of the project and copy and paste the contents of the matching file from the back-end sub-directory in the the submitted document.
 ### Scripts: 
 
 **Development:**
@@ -31,14 +37,14 @@ Use ```npm install``` to install all dependencies. Please note that npm has been
 - Testing: npm run start-test
 - Jest Coverage: npm run jest-coverage
 
-***Please note: the test database must be re-seeded before tests can be repeated. Some fields on the schema are set to unique and will throw errors if attempting to add duplicate data in the generalusers and policeusers collections. Execute: npm run seed-test EVERY TIME before executing: npm run start-test***
+***Please note: the test database must be re-seeded before tests can be repeated. Some fields on the schema are set to unique and will throw errors if attempting to add duplicate data in the generalusers and policeusers collections. Execute: npm run seed-test EVERY TIME before executing: npm run start-test or npm run jest-coverage***
 
 ### Directives: 
 
 - If setting up a MongoDB local development database for the purpose of marking this assessment the database must be named: hope-hunters-dev
 - If setting up MongoDB local testing database for the purpose of marking this assessment the database must be named: hope-hunters-testdb
 
-- Node is configured to run on port 5001. If you are unable to use this port, please change the POST variable on line 10 of the server.js file at the root of this directory. 
+- Node is configured to run on port 5001. If you are unable to use this port, please change the POST variable on line 10 of the server.js file in the src sub-folder in this directory. 
 
 ### Endpoints:
 

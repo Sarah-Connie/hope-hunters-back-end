@@ -13,7 +13,7 @@ const getUsers = async (request, response) => {
     // Get all documents in the policeusers collection
     let policeUsers = await PoliceUser.find({})
                                 .catch(error => {
-                                    return response.status(404).json({error: 'Unable to access documents police users.'})});
+                                    return response.status(404).json({error: 'Unable to access police users documents.'})});
     // Response with documents in two arrays 
     return response.status(200).send([generalUsers, policeUsers]) 
 }
