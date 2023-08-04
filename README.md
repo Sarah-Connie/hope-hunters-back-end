@@ -4,8 +4,8 @@
 
 ### Deployments:
 
-- Front End:
-- Back End: http://ec2-3-26-148-33.ap-southeast-2.compute.amazonaws.com:5001/
+- Front End: https://hope-helpers.netlify.app/
+- Back End: https://hope-helpers.onrender.com/
 
 ### Repositories: 
 
