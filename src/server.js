@@ -24,7 +24,7 @@ app.use(helmet.contentSecurityPolicy({
 // Define approved connection origins
 const cors = require('cors');
 let corsOptions = {
-	origin: ["http://localhost:3000"],
+	origin: ["http://localhost:3000", "https://hope-helpers.netlify.app"],
 	optionsSuccessStatus: 200
 };
 
