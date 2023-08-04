@@ -29,7 +29,7 @@ const login = async (request, response) => {
                 subject: "Verify Email Address - Hope Helpers",
                 text: `Hello `+ request.body.fullName + `,\n\n` + 
                         `Please verify your email address by clicking the link: ` 
-                        + request.headers.origin + `verified\/` + request.body.email 
+                        + request.headers.origin + `\/verified\/` + request.body.email 
                         + `\n\nThank You!\n` 
                 };
                  
@@ -67,7 +67,7 @@ const login = async (request, response) => {
                 subject: "Verify Email Address - Hope Helpers",
                 text: `Hello `+ request.body.fullName + `,\n\n` + 
                         `Please verify your email address by clicking the link: ` 
-                        + request.headers.origin + `verified\/` + request.body.email 
+                        + request.headers.origin + `\/verified\/` + request.body.email 
                         + `\n\nThank You!\n` 
             };
      
