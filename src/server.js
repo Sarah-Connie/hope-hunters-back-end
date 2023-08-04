@@ -7,7 +7,7 @@ const app = express();
 const mongoose = require('mongoose');
 
 // Define port and host url as per environmental variable or specified value
-const PORT = 5001
+const PORT = process.env.PORT || 5001
 const HOST = process.env.HOST || '127.0.0.1'
 
 // Define helmet policies
