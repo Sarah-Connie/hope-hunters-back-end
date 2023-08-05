@@ -42,7 +42,7 @@ const searchAllMissing = async (request, response) => {
         // is greater than 4 characters long and matches the year on a dateLastSeen field
         // and sort them in descending order for date added
         let searchMissing = await MissingPerson
-                                    .find({$or: [{'dateLastSeen': {$gte: dateStart, $lte: dateMax}}]})
+                                    .find({$or: [{'dateLastSeen': {$gte: dateStart, $lte: dateMax}}, {'locationLastSeen.postcode': request.params.search}]})
                                     .sort('-dateAdded')
                                     .catch(error => {
                                         return response.status(404).json({error: 'Unable to access missing persons documents.'})});

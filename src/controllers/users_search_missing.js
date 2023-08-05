@@ -42,7 +42,7 @@ const searchUsersMissing = async (request, response) => {
         // is greater than 4 characters long and matches the year on a dateLastSeen field
         // and sort them in descending order for date added
         let searchMissing = await MissingPerson
-                                    .find({$or: [{'dateLastSeen': {$gte: dateStart, $lte: dateMax}}]})
+                                    .find({$or: [{'dateLastSeen': {$gte: dateStart, $lte: dateMax}}, , {'locationLastSeen.postcode': request.params.search}]})
                                     .where('addedBy').equals(request.userID)
                                     .sort('-dateAdded')
                                     .catch(error => {
