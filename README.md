@@ -29,22 +29,22 @@ This project uses secrets stored in environmental variables. When cloning this p
 ### Scripts: 
 
 **Development:**
-- Seed Development Database: npm run seed-dev
-- Development: npm run start-dev
+- Seed Development Database: ```npm run seed-dev```
+- Development: ```npm run start-dev```
 
 **Testing:**
-- Seed Test Database: npm run seed-test 
-- Testing: npm run start-test
-- Jest Coverage: npm run jest-coverage
+- Seed Test Database: ```npm run seed-test``` 
+- Testing: ```npm run start-test```
+- Jest Coverage: ```npm run jest-coverage```
 
-***Please note: the test database must be re-seeded before tests can be repeated. Some fields on the schema are set to unique and will throw errors if attempting to add duplicate data in the generalusers and policeusers collections. Execute: npm run seed-test EVERY TIME before executing: npm run start-test or npm run jest-coverage***
+***Please note: the test database must be re-seeded before tests can be repeated. Some fields on the schema are set to unique and will throw errors if attempting to add duplicate data in the generalusers and policeusers collections. Execute: ```npm run seed-test``` EVERY TIME before executing: ```npm run start-test``` or ```npm run jest-coverage```***
 
 ### Directives: 
 
 - If setting up a MongoDB local development database for the purpose of marking this assessment the database must be named: hope-hunters-dev
 - If setting up MongoDB local testing database for the purpose of marking this assessment the database must be named: hope-hunters-testdb
 
-- Node is configured to run on port 5001. If you are unable to use this port, please change the POST variable on line 10 of the server.js file in the src sub-folder in this directory. 
+- Node is configured to run locally on port 5001. If you are unable to use this port, please change the PORT variable on line 10 of the server.js file in the src sub-folder. 
 
 ### Endpoints:
 
@@ -237,7 +237,7 @@ After:
 ![/missing/delete/:id example response on success](./assets/route_examples/missing_delete_response.png)
 
 
-**URL Path:** /missing/search/:search where :search is a parameter to match a fuzzy search query string on the fields: fullName, areaSuspectedToBe, hairColour, eyeColour, complexion, distinctiveFeatures, age and currentAge (one number only of length less than four digits) and year on the dateLastSeen field (one number only of4 digit length) \
+**URL Path:** /missing/search/:search where :search is a parameter to match a fuzzy search query string on the fields: fullName, areaSuspectedToBe, hairColour, eyeColour, complexion, distinctiveFeatures, age and currentAge (integer of 3 or less digits in length), postcode on the locationLastSeen field (integer 4 digits in length), and year on the dateLastSeen field (integer 4 digits in length)  \
 **Description:** Allow any user to perform a fuzzy search for any missingpersons document/s \
 **HTTP Method:** GET \
 **Authentication Type:** NIL \
@@ -255,7 +255,7 @@ After:
 ![/missing/search/:search example response](./assets/route_examples/search_all_response4.png)
 
 
-**URL Path:** /missing/users/search/:search where :search is a parameter to match a fuzzy search query string on the fields: fullName, areaSuspectedToBe, hairColour, eyeColour, complexion, distinctiveFeatures, age and currentAge \
+**URL Path:** /missing/users/search/:search where :search is a parameter to match a fuzzy search query string on the fields: fullName, areaSuspectedToBe, hairColour, eyeColour, complexion, distinctiveFeatures, age and currentAge (integer of 3 or less digits in length), postcode on the locationLastSeen field (integer 4 digits in length), and year on the dateLastSeen field (integer 4 digits in length) \
 **Description:** Allow an logged in, verified user to perform a fuzzy search for missingpersons document/s that they own \
 **HTTP Method:** GET \
 **Authentication Type:** JSON Web Token \
